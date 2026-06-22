@@ -29,3 +29,7 @@ int main(){
     cout << result << endl;
     return 0;
 }
+/* This program finds the bitwise complement of an integer.
+It takes a number, converts it to its binary representation, 
+flips all the 0s to 1s and 1s to 0s, 
+and then outputs the new intege*/
