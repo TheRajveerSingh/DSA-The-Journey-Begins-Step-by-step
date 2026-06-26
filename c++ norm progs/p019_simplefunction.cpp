@@ -5,37 +5,68 @@ using namespace std;
 class Solution {
 public:
     int isPrime(int p) {
-    vector<int> fc;
-    if(p<2){
-        cout<<p<<" is not a prime number."<<endl; return 0;}
+        vector<int> fc;
 
-    for (int j = p-1; j>=2; j--){
-         if(p%j==0){
-            fc.push_back(j);}}
-
-    if(fc.empty()){cout<<p<<" is a prime number."<<endl; return 1;}
-    else{ cout<<p<<" is not a prime number, with its factors being 1, "<<p<<", ";
-    for (int i = 0; i<fc.size(); i++){
-        cout<<fc[i]<<", ";
+        if (p < 2) {
+            cout << p << " is not a prime number." << endl;
+            return 0;
         }
+
+        for (int j = p - 1; j >= 2; j--) {
+            if (p % j == 0)
+                fc.push_back(j);
+        }
+
+        if (fc.empty()) {
+            cout << p << " is a prime number." << endl;
+            return 1;
+        }
+
+        cout << p << " is not a prime number, with its factors being 1, " << p;
+        for (int i = 0; i < fc.size(); i++)
+            cout << ", " << fc[i];
         cout << endl;
+
         return 0;
-    }}
+    }
+
+    int Factorial(int t) {
+        unsigned long long fact = 1; //because int can overflow quickly
+
+        for (int i = 1; i <= t; i++)
+            fact *= i;
+
+        cout << "Factorial of " << t << " = " << fact << endl;
+        return 1;
+    }
 };
-int main(){
+
+int main() {
     Solution Solver;
-    int a,b,c;
-    cout<<"Enter 1st number: ";
-    cin>>a;
-    int result = Solver.isPrime(a);
-    cout<<"Enter 2nd number greater than 1st number: ";
-    cin>>b;
-    result = Solver.isPrime(b);
+
+    int a, b, c;
+
+    cout << "Enter 1st number: ";
+    cin >> a;
+
+    Solver.isPrime(a);
+    Solver.Factorial(a);
+
+    cout << "Enter 2nd number greater than 1st number: ";
+    cin >> b;
+
+    Solver.isPrime(b);
+    Solver.Factorial(b);
+
     c = b - a;
-    result = Solver.isPrime(c);
-    cout << result << endl;
+
+    cout << "Difference = " << c << endl;
+
+    Solver.isPrime(c);
+    Solver.Factorial(c);
+
     return 0;
-};
+}
 /* Here I had a doubt, that why I needed to give 'return 0' and 'return 1' here,
 cause last time while doing this same pgoram without functions, I didn't need to.
 Here is the answer what I got:
