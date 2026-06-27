@@ -80,10 +80,12 @@ rather than inside a custom function.The rule for return statements in C++ depen
  the C++ standard guarantees that the compiler will automatically insert return 0; 
  for you.Because your if(fc.empty()) and else blocks are sitting directly inside main(), 
  the program safely finishes, automatically returns 0 to the operating system, 
- and exits cleanly.2. Custom functions do not get this exceptionWhen 
- you wrote your code inside int isPrime(int p), you created a custom member function. 
+ and exits cleanly.
+ 2. Custom functions do not get this exception
+ When you wrote your code inside int isPrime(int p), you created a custom member function. 
  The compiler will not automatically insert a return statement for custom functions.
  If a custom function says it returns an int, you must explicitly write a return 
  statement for every possible path. If you do not, the compiler flags it with the 
  "control reaches end of non-void function" warning you saw earlier.
+ ..
 */
