@@ -43,6 +43,7 @@ int main(){
 //I used before:
 #include <iostream>
 #include <vector>
+#include <string> // Required header
 using namespace std;
 
 class Solution {
