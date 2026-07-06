@@ -77,7 +77,7 @@ public:
 
 int main() {
     int a = 5, b = 10;
-    // You can call it directly using the class name and :: scope resolution operator
+    // We can call it directly using the class name and :: scope resolution operator
     Solution::swap1(a, b); 
 }
 /*
