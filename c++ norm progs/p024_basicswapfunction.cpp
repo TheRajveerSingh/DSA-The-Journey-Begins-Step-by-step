@@ -3,6 +3,7 @@ using namespace std;
 
 class Solution{
 public:
+//We're making 2 functions with the same name! But..parameters are different, so its fine.
 void swap1(int &a, int &b){
     int c;
     c = a;
