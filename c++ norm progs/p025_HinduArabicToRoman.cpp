@@ -31,6 +31,7 @@ while(j!=0){
 ......
 ......
 Yes, this version is slightly off. 
+Firstly, 
 My logic was to extract digits from right to left (ones place, then tens place, etc.).
 However, Roman numerals are read and written from left to right (largest values to smallest values). 
 Printing them right-to-left will give us the numerals backwards 
@@ -113,4 +114,16 @@ Roman Numeral: _C_D_L_VMDCLXXXIV
 Enter a Hindu-Arabic number: 
 7543
 Roman Numeral: _VMMDXLIII
+*/
+//................
+/*
+How does it work:
+Instead of checking individual digits, the while (j >= values[i]) loop handles everything. 
+For example, if we enter 5000, the program skips everything until it hits 5000 in the array, 
+appends _V, subtracts 5000, and ends. 
+Handling Subtractive Patterns: Just like 4 is IV ($5 - 1$), 
+4000 is written as _I_V ($5000 - 1000$). 
+By hardcoding these transition states (like 4000, 9000, 40000, etc.) into the vector, 
+the program effortlessly avoids illegal repetitions like _V_I_I_I_I.
+If we input 52300, it grabs _L (50,000), then two Ms (2,000), then C (300) to output _LMMC.
 */
