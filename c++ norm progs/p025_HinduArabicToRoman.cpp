@@ -21,11 +21,9 @@ while(j!=0){
     else if (rem==2){cout<<"II";}
     else if (rem==3){cout<<"III";}
     else if (rem==4){cout<<"IV";}
-    else if (rem==5){cout<<"V";}
-    else if (rem==6){cout<<"VI";}
-    else if (rem==7){cout<<"VII";}
-    else if (rem==8){cout<<"VIII";}
-    else if (rem==9){cout<<"IX";}
+    .
+    .
+    .
 }
 }
 ......
