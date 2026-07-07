@@ -126,4 +126,10 @@ Handling Subtractive Patterns: Just like 4 is IV ($5 - 1$),
 By hardcoding these transition states (like 4000, 9000, 40000, etc.) into the vector, 
 the program effortlessly avoids illegal repetitions like _V_I_I_I_I.
 If we input 52300, it grabs _L (50,000), then two Ms (2,000), then C (300) to output _LMMC.
+.......................................................
+A New Concept to learn:
+cin.fail()
+cin.fail() checks if the data the user typed matches the data type of the variable
+which we are trying to put it into. 
+If it doesn't match what was expected, cin.fail() becomes true.
 */
