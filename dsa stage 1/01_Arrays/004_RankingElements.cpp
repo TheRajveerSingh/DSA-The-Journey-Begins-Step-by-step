@@ -31,15 +31,14 @@ So it would look something like:
 using namespace std;
 
 int main() {
-    // 1. Get the size
-    int size;
+    int size; //1. Getting size of array
     cout << "Enter size: ";
     cin >> size;
 
-    // 2. Get the original array
-    int original[size];
+    // 2. Getting the original array
+    int original[size]; //Defining an array of the size given by the user
     cout << "Enter numbers: ";
-    for (int i = 0; i < size; i++) {
+    for (int i = 0; i < size; i++) { //Loop for Entering items of the array
         cin >> original[i];
     }
 
@@ -47,26 +46,33 @@ int main() {
     int uniqueArr[size]; // Can hold up to 'size' elements maximum
     int uniqueSize = 0;  // Keeps track of how many unique numbers we actually find
 
-    for (int i = 0; i < size; i++) {
+    for (int i = 0; i < size; i++) { //Grabs an item from our original array one by one.
         bool alreadyExists = false;
         
-        // Look through our uniqueArr to see if we've already added this number
+        // Looking through our uniqueArr to see if we've already added this number
         for (int j = 0; j < uniqueSize; j++) {
             if (uniqueArr[j] == original[i]) {
                 alreadyExists = true;
                 break; // Found a duplicate, stop looking
             }
         }
-        
+        /*If the inner loop finishes and alreadyExists is still false, 
+        it means the number is brand new!
+        It puts the number into uniqueArr[uniqueSize] and increments uniqueSize++ 
+        so the array "grows" by one slot.*/
+
         // If it's a brand new number, add it to uniqueArr
         if (!alreadyExists) {
-            uniqueArr[uniqueSize] = original[i];
+            uniqueArr[uniqueSize] = original[i]; //Here, 'uniqueSize' acts like an index.
             uniqueSize++; // Grow the unique array size tracker
         }
     }
 
     // 4. Sort this new unique array
     sort(uniqueArr, uniqueArr + uniqueSize);
+    /*We pass it the starting point of our array (uniqueArr) and the exact boundary 
+    of where our valid data ends (uniqueArr + uniqueSize). 
+    It rearranges the numbers in place from smallest to largest.*/
 
     // 5. Compare original array with unique array and print (index + 1)
     cout << "Output: ";
