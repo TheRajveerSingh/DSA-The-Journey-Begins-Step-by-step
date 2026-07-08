@@ -66,6 +66,7 @@ cout << "The array has " << arraySize << " elements." << endl;<br>
 So Sort an Arrray: There are many types of sorting, the basic one being bubble sort.<br>
 All types of sorting in array and their concept:<br>
 1. Bubble Sort:<br>
+
 ........<br>
 Next, we would learn about:<br>
 1. Multi-Dimensional Arrays (Arrays Inside Arrays)<br>
