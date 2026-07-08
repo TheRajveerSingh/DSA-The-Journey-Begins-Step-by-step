@@ -30,7 +30,7 @@ b. If it is full, it automatically creates a brand new array that is double the 
 c. It copies the old data into the new, larger array.<br>
 d. It deletes the old, small array to free up memory.<br>
 e. It drops the new item into the next slot.<br>
-<br>
+
 Because vectors do this automatic resizing, they keep track of two different numbers:<br>
 Size: How many items are actually inside the vector right now (accessible via .size()).<br>
 Capacity: How many items the vector can hold before it is forced to grow and allocate more memory (accessible via .capacity()).<br>
@@ -62,6 +62,7 @@ int oneElementBytes = sizeof(data[0]); <br>
 int arraySize = sizeof(data) / sizeof(data[0]);<br>
 cout << "The array has " << arraySize << " elements." << endl;<br>
 ..................<br>
+
 So Sort an Arrray: There are many types of sorting, the basic one being bubble sort.<br>
 All types of sorting in array and their concept:<br>
 1. Bubble Sort:<br>
@@ -71,4 +72,5 @@ Next, we would learn about:<br>
 2. Passing Arrays to Functions<br>
 3. The Modern Alternative: std::array<br>
 4. Range-Based for Loops (The "For-Each" Loop)<br>
+
 .........................................................<br>
