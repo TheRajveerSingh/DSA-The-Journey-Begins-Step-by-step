@@ -30,6 +30,7 @@ b. If it is full, it automatically creates a brand new array that is double the 
 c. It copies the old data into the new, larger array.<br>
 d. It deletes the old, small array to free up memory.<br>
 e. It drops the new item into the next slot.<br>
+<br>
 Because vectors do this automatic resizing, they keep track of two different numbers:<br>
 Size: How many items are actually inside the vector right now (accessible via .size()).<br>
 Capacity: How many items the vector can hold before it is forced to grow and allocate more memory (accessible via .capacity()).<br>
