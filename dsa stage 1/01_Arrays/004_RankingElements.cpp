@@ -88,3 +88,12 @@ int main() {
 
     return 0;
 }
+/*
+Result:
+Enter size: 5
+Enter numbers: 23 6 12 6 4
+Output: 4 2 3 2 1 
+Enter size: 10                                  
+Enter numbers:  -10 -8 16 16 18 -6 -18 4 16 -2
+Output: 2 3 7 7 8 4 1 6 7 5 
+*/
