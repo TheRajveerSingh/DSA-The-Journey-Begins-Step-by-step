@@ -49,14 +49,14 @@ int main(){
     cout<<"Enter the coloumn of the bishop: ";
     int B;
     cin>>B;
-    cout<<"The total number of steps the Bishop take take from box ("<<A<<","<<B<<") is: "<<Solution(A,B);
+    cout<<"The total number of steps the Bishop can take from box ("<<A<<","<<B<<") is: "<<Solution(A,B);
 }
 /*
 Result:
 Enter the row of the bishop: 5
 Enter the coloumn of the bishop: 6
-The total number of steps the Bishop take take from box (5,6) is: 11
+The total number of steps the Bishop can take from box (5,6) is: 11
 Enter the row of the bishop: 1
 Enter the coloumn of the bishop: 1
-The total number of steps the Bishop take take from box (1,1) is: 7
+The total number of steps the Bishop can take from box (1,1) is: 7
 */
