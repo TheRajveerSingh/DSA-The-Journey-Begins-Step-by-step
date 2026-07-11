@@ -1,6 +1,6 @@
 /*
 Question: Trailing Zeroes in a Factorial
-Basically, a number is given by th user, and its factorial is taken out.
+Basically, a number is given by the user, and its factorial is taken out.
 We need to find how many zeroes does that factorial end with.
 For example:
 5! = 120, so trailing zeroes = 1;
@@ -9,11 +9,11 @@ For example:
 My first approach was to find the value of the whole factorial, 
 and divide it by 10 unless I don't find any other number as the remainder other than 0...
 But this method fails completely for larger numbers because of integer overflow...
-1. The Problem: Integer OverflowA standard 64-bit integer (like long long in C++) 
-can only hold numbers up to about 9 x 10^18.
-20! is roughly 2.4 x 10^18 (This is the absolute limit for standard integers).
-21! overflows the memory, turning into a corrupted, garbage number.
-100! has 158 digits. No standard numeric data type can hold this.
+1. The Problem: Integer Overflow
+A standard 64-bit integer (like long long in C++) can only hold numbers up to about 9 x 10^18.
+-> 20! is roughly 2.4 x 10^18 (This is the absolute limit for standard integers).
+-> 21! overflows the memory, turning into a corrupted, garbage number.
+-> 100! has 158 digits. No standard numeric data type can hold this.
 If the problem asks us to find the trailing zeroes for N = 1000 or N = 10^5, 
 calculating the actual factorial value is mathematically impossible on a standard machine 
 without specialized BigInt libraries, which are highly inefficient for this task.
@@ -29,7 +29,7 @@ to make a 10.
 Therefore, the number of trailing zeroes is exactly equal to the number of times 5 appears 
 as a prime factor.
 Why do we divide continuously?
-Take N = 30.
+Let's take N = 30.
 Divide by 5: (30 / 5 = 6). 
 This counts numbers that have at least one factor of 5 (5, 10, 15, 20, 25, 30).
 Divide by 25 (5^2): (30 / 25  = 1). 
