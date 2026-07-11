@@ -24,7 +24,7 @@ int main(){
     string word;
     cin>>word;
     cout<<lowertoUpper(word)<<endl;
-    return 0;
+    return 0; //Its just like telling your compiler that it has reached the end of code without any problem.
 }
 /*
 Result:
