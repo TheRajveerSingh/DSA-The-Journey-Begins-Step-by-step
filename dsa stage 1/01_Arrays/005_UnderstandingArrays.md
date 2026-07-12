@@ -75,3 +75,8 @@ Next, we would learn about:<br>
 4. Range-Based for Loops (The "For-Each" Loop)<br>
 
 .........................................................<br>
+NOTE:<br>
+To find the size or length of a:<br>
+1. string: word.length() or word.size()<br>
+2. number: first convert it into a string: to_string(num).length()<br>
+3. array: modern c++ allows this: size(arr)<br>
