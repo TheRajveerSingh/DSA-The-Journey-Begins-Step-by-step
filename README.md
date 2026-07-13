@@ -5,16 +5,16 @@ A comprehensive Data Structures and Algorithms learning repository with C++ impl
 ## 📁 Repository Structure
 
 ### 1. **C++ Norm Progs** - Foundational C++
-Basic C++ programs covering programming fundamentals:
-- `p001_basics.cpp` - Basic input/output and variables
-- `p002_loops.cpp` - For, while loops
+A collection of beginner-friendly C++ programs covering core concepts and simple problem-solving:
+- `p001_basics.cpp` - Basic input/output, variables, and operators
+- `p002_loops.cpp` - For loops and basic iteration
 - `p003_factorial.cpp` - Factorial calculation
 - `p004_prime.cpp` - Prime number checking
-- `p005_fibb.cpp` - Fibonacci sequence
-- `p006_patterns.cpp` - Pattern printing
+- `p005_fibb.cpp` - Fibonacci sequence generation
+- `p006_patterns.cpp` - Pattern printing exercises
 - `p007_whileloops.cpp` - While loop implementations
 - `p008_sumofnum.cpp` - Sum of numbers
-- `p009_dowhile.cpp` - Do-while loops
+- `p009_dowhile.cpp` - Do-while loop practice
 - `p010_brcon.cpp` - Break and continue statements
 - `p011_switch.cpp` - Switch case statements
 - `p012_dectobin.cpp` - Decimal to binary conversion
@@ -24,6 +24,18 @@ Basic C++ programs covering programming fundamentals:
 - `p016_palindrome.cpp` - Palindrome checker
 - `p017_compnum.cpp` - Complex number operations
 - `p018_climbingstairs.cpp` - Climbing stairs problem
+- `p019_simplefunction.cpp` - Simple function examples
+- `p020_factorialAndprimefunction.cpp` - Functions for factorial and prime logic
+- `p021_sumofintfunc.cpp` - Function-based integer summation
+- `p022_simplefunction2.cpp` - Additional function practice
+- `p023_MyfirstArray.cpp` - Introduction to arrays
+- `p024_basicswapfunction.cpp` - Basic swap using functions
+- `p025_HinduArabicToRoman.cpp` - Number conversion exercise
+- `p026_lowercasetoUpper.cpp` - Case conversion program
+- `p027_armstrongno.cpp` - Armstrong number check
+- `p028_Trailing0sInfactorial.cpp` - Trailing zero count in factorial
+- `p029_BishopSteps.cpp` - Bishop movement problem
+- `p030_NimGame.cpp` - Nim game implementation
 
 ### 2. **DSA Stage 1** - Core Data Structures & Algorithms
 Organized by topic with progressive difficulty:
