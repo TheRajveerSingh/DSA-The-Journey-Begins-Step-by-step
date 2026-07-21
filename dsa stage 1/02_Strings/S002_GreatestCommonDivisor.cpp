@@ -22,6 +22,12 @@ then gcd will give the length of the resultant string, right?
 ....
 Now, we return the substring of the length got from any one of the given strings, 
 as that would basically be the answer (because after that prefix, the same gcd will repeat).
+........
+NOTE:
+Since the question asked for only upper case strings, I've put the range-based loop
+to convert them into upper before sending it to the function. 
+But, I'd like the experiment a little with weird strings, so I'll just keep it as a comment, 
+which can be removed whenever needed..
 */
 #include <iostream>
 #include <string>
@@ -51,6 +57,11 @@ int main() {
     cin>>str1;
     cout<<"Enter String 2: ";
     cin>>str2;
+
+    // To convert take string by user to uppercase (Using range-based for loop method)
+    //for (char &c : str1) {c = toupper(static_cast<unsigned char>(c));}
+    //for (char &c : str2) {c = toupper(static_cast<unsigned char>(c));}
+
     cout << "The Greatest Common Substring which can divide both given strings is: " << solver.gcdOfStrings(str1, str2);
     return 0;
 }
@@ -62,4 +73,30 @@ The Greatest Common Substring which can divide both given strings is: ABC
 Enter String 1: ADvADvADv
 Enter String 2: ADvADvADvADvADv
 The Greatest Common Substring which can divide both given strings is: ADv
+
+Result when the toUpper is used:
+Enter String 1: ADvADvADv                         
+Enter String 2: ADvADvADvADvADv
+The Greatest Common Substring which can divide both given strings is: ADV
+*/
+/*
+Something I learnt:
+Unlike Python (str.upper()) or Java (str.toUpperCase()), 
+standard C++ requires us to modify strings character by character.
+Example:
+
+1. For all versions of c++ : 
+transform(str1.begin(), str1.end(), str1.begin(), [](unsigned char c) {
+    return toupper(c);
+});
+
+2. For c++ 20 and above:
+ranges::transform(str1, str1.begin(), [](unsigned char c) {
+    return toupper(c);
+});
+
+3. The Range-Based for Loop:
+for (char &c : str1) {
+    c = toupper(static_cast<unsigned char>(c));
+}
 */
