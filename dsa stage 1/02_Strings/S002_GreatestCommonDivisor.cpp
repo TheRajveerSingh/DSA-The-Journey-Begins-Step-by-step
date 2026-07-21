@@ -1,4 +1,4 @@
-/*This question is part of Leetzcode 75:
+/*This question is part of Leetcode 75:
 1071. Greatest Common Divisor of Strings
 Basically, 
 When two strings str1 and str2 are given, 
