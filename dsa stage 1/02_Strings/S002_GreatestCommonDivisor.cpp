@@ -17,7 +17,11 @@ If its not, that means no gcd exists for both the given strings.
 Now, in c++,
 gcd(a, b) is a built-in function from the <numeric> header that calculates 
 the largest integer that divides both a and b cleanly with zero remainder.
-so
+So, what we do is, if we take the length of the both the strings, 
+then gcd will give the length of the resultant string, right?
+....
+Now, we return the substring of the length got from any one of the given strings, 
+as that would basically be the answer (because after that prefix, the same gcd will repeat).
 */
 #include <iostream>
 #include <string>
@@ -32,31 +36,30 @@ public:
             return "";
         }
         
-        // Find the GCD of the lengths of the two strings
+        // To find the GCD of the lengths of the two strings
         int gcd_length = gcd(str1.length(), str2.length());
         
-        // Return the prefix of that length
+        // This will return the prefix of that length; which would literally be the resultant (because after that prefix, the same gcd will repeat)
         return str1.substr(0, gcd_length);
     }
 };
 
 int main() {
     Solution solver;
-
-    // Test Case 1
-    string str1 = "ABCABC";
-    string str2 = "ABC";
-    cout << "Test 1 Output: " << solver.gcdOfStrings(str1, str2) << " (Expected: ABC)\n";
-
-    // Test Case 2
-    string str3 = "ABABAB";
-    string str4 = "ABAB";
-    cout << "Test 2 Output: " << solver.gcdOfStrings(str3, str4) << " (Expected: AB)\n";
-
-    // Test Case 3
-    string str5 = "LEET";
-    string str6 = "CODE";
-    cout << "Test 3 Output: \"" << solver.gcdOfStrings(str5, str6) << "\" (Expected: \"\")\n";
-
+    string str1, str2;
+    cout<<"Enter String 1: ";
+    cin>>str1;
+    cout<<"Enter String 2: ";
+    cin>>str2;
+    cout << "The Greatest Common Substring which can divide both given strings is: " << solver.gcdOfStrings(str1, str2);
     return 0;
 }
+/*
+Result:
+Enter String 1: ABCABCABC                         
+Enter String 2: ABC
+The Greatest Common Substring which can divide both given strings is: ABC
+Enter String 1: ADvADvADv
+Enter String 2: ADvADvADvADvADv
+The Greatest Common Substring which can divide both given strings is: ADv
+*/
