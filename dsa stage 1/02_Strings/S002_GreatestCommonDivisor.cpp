@@ -81,8 +81,10 @@ The Greatest Common Substring which can divide both given strings is: ADV
 */
 /*
 Something I learnt:
-Unlike Python (str.upper()) or Java (str.toUpperCase()), 
-standard C++ requires us to modify strings character by character.
+I. For finding a substring from a string with a length: string.substr(0, length);
+
+II. Unlike Python (str.upper()) or Java (str.toUpperCase()), 
+    standard C++ requires us to modify strings character by character.
 Example:
 
 1. For all versions of c++ : 
