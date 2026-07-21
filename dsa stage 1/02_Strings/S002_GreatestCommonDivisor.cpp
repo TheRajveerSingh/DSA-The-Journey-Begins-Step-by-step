@@ -12,7 +12,12 @@ That means,
 The string gcd should itself be there in both strings given, either 1 copy or more, but not half or extra, right?
 So, first, to confirm that, what we can do is: if str1 + str2 == str2 + str1
 By this, we confirm that there is a common gcd that divides them fully,
-If its not, that means no gcd exists for botht he given strings.
+If its not, that means no gcd exists for both the given strings.
+..........
+Now, in c++,
+gcd(a, b) is a built-in function from the <numeric> header that calculates 
+the largest integer that divides both a and b cleanly with zero remainder.
+so
 */
 #include <iostream>
 #include <string>
