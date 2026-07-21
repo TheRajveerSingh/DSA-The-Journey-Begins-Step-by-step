@@ -1,7 +1,22 @@
+/*This question is part of Leetzcode 75:
+1071. Greatest Common Divisor of Strings
+Basically, 
+When two strings str1 and str2 are given, 
+we have to return the largest string such that it divides both str1 and str2.
+For now, these strings should only be English UpperCase Letters.
+............................
+Stratergy:
+So if there should be a GCD for 2 strings, 
+it should be such that it divided both strings in whole, leaving no remainder, right?
+That means,
+The string gcd should itself be there in both strings given, either 1 copy or more, but not half or extra, right?
+So, first, to confirm that, what we can do is: if str1 + str2 == str2 + str1
+By this, we confirm that there is a common gcd that divides them fully,
+If its not, that means no gcd exists for botht he given strings.
+*/
 #include <iostream>
 #include <string>
 #include <numeric> // Required for gcd
-
 using namespace std;
 
 class Solution {

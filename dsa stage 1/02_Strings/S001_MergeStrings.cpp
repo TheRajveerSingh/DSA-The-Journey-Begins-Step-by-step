@@ -1,4 +1,6 @@
-/*The goal of this program is to merge strings alternatively.
+/*This question was part of LeetCode 75:
+1768. Merge Strings Alternately
+The goal of this program is to merge strings alternatively.
 */
 #include <iostream>
 #include <string> 
