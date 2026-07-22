@@ -57,3 +57,14 @@ and print true for 1, and false for 0, okay?
 
 And done..
 */
+#include <iostream>
+#include <vector>
+#include <algorithm> //For finding max in array
+using namespace std;
+
+class Solution{
+public:
+    vector<bool> kidswithCandies(const vector<int>& candies, int ExtraCandies){
+
+    }
+};
