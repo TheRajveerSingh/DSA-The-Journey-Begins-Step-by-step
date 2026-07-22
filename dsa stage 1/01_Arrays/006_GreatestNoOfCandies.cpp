@@ -59,12 +59,61 @@ And done..
 */
 #include <iostream>
 #include <vector>
-#include <algorithm> //For finding max in array
+#include <algorithm>
+
 using namespace std;
 
-class Solution{
+// 1. The solution class logic
+class Solution {
 public:
-    vector<bool> kidswithCandies(const vector<int>& candies, int ExtraCandies){
-
+    vector<bool> kidsWithCandies(vector<int>& candies, int extraCandies) {
+        int max_candies = *max_element(candies.begin(), candies.end());
+        vector<bool> result;
+        
+        for (int candy : candies) {
+            result.push_back(candy + extraCandies >= max_candies);
+        }
+        
+        return result;
     }
 };
+
+// 2. The main function to handle user interaction
+int main() {
+    int n;
+    cout << "Enter the number of kids: ";
+    cin >> n;
+
+    // We can size the vector dynamically based on user input
+    vector<int> candies(n);
+
+    cout << "Enter the candies for each kid: ";
+    for (int i = 0; i < n; i++) {
+        cin >> candies[i];
+    }
+
+    int extraCandies;
+    cout << "Enter the number of extra candies: ";
+    cin >> extraCandies;
+
+    // Create an object of Solution class and run the method
+    Solution solver;
+    vector<bool> result = solver.kidsWithCandies(candies, extraCandies);
+
+    // Print the final result
+    cout << "\nResult: [ ";
+    for (bool val : result) {
+        // Output 'true' / 'false' instead of 1 / 0
+        cout << (val ? "true" : "false") << " "; 
+    }
+    cout << "]" << endl;
+
+    return 0;
+}
+/*
+Result:
+Enter the number of kids: 6          
+Enter the candies for each kid: 2 3 5 1 3 4
+Enter the number of extra candies: 2
+Result: [ false true true false true true ]
+*/
