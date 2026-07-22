@@ -4,7 +4,7 @@
 using namespace std;
 
 char lowertoUpper(char lower){
-    char upper = lower - 'a' + 'A';
+    char upper = lower - 'a' + 'A'; //Let's assume we entered 'b', so: 'b' - 'a' + 'A' = 98 - 97 + 65 = 66 = 'B' 
     return upper;
 }
 
