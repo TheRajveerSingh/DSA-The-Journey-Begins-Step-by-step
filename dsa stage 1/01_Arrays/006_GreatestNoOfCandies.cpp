@@ -124,6 +124,14 @@ What I learnt:
 4. If there's an if-else statement for only 1 condition, and we need to return bool values
    we can do it by just writing: return(condition), and no need for if-else; as by default true or false
    for that condition will be returned. (As we can see in line 73)
+   Example:
+      bool isEven(int number) {
+      if (number % 2 == 0) {return true;} 
+      else {return false;}}
+   can be directly written as:
+      bool isEven(int number) {
+      return number % 2 == 0; // Returns true if even, false if odd
+      }
 
 What I revised:
 1. Concept of saving time: The function taking the parameter as 'call-by-reference (&)' and then using 'const' so that it doesn't change by mistake
