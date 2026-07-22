@@ -9,7 +9,8 @@ public:
         while(x!=0){
             rem = x%10;
             x/=10;
-            if(ans>INT_MAX/10 || ans<INT_MIN/10)
+            if(ans>INT_MAX/10 || ans<INT_MIN/10) //Checks if the next multiplication will exceed the upper limit/will drop below the lower limit.
+
             {return 0;}
             ans = (ans*10)+rem;}
         
