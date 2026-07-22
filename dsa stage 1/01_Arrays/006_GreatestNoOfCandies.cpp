@@ -60,34 +60,34 @@ And done..
 #include <iostream>
 #include <vector>
 #include <algorithm>
-
 using namespace std;
 
-// 1. The solution class logic
 class Solution {
 public:
-    vector<bool> kidsWithCandies(vector<int>& candies, int extraCandies) {
-        int max_candies = *max_element(candies.begin(), candies.end());
-        vector<bool> result;
+    vector<bool> kidsWithCandies(const vector<int>& candies, int extraCandies) { //remember our technique to use call-by-reference and using const to save time, and not even change the value? 
+        int max_candies = *max_element(candies.begin(), candies.end()); //An '*' is to be used as without it, the actual location for the i will be given. '*' returns the value in that location
+        vector<bool> result;  //to create a result array to store the output boolean array
         
-        for (int candy : candies) {
-            result.push_back(candy + extraCandies >= max_candies);
+        for (int i : candies) {                                       //for i in candies array
+            if (i + extraCandies >= max_candies) {   //Alternatively we can use this if-else's short form: 
+            result.push_back(true);                  //result.push_back(i + extraCandies >= max_candies);
+            } else {                                 //cause it'll push 1 or 0 accordingly by default.
+            result.push_back(false);
+            }
         }
         
         return result;
     }
 };
 
-// 2. The main function to handle user interaction
 int main() {
     int n;
-    cout << "Enter the number of kids: ";
+    cout << "Enter the number of kids: ";  //Taking the size of the array
     cin >> n;
 
-    // We can size the vector dynamically based on user input
-    vector<int> candies(n);
+    vector<int> candies(n);    //Creating the array 
 
-    cout << "Enter the candies for each kid: ";
+    cout << "Enter the candies for each kid: ";  //Taking values in the array
     for (int i = 0; i < n; i++) {
         cin >> candies[i];
     }
@@ -96,15 +96,13 @@ int main() {
     cout << "Enter the number of extra candies: ";
     cin >> extraCandies;
 
-    // Create an object of Solution class and run the method
     Solution solver;
     vector<bool> result = solver.kidsWithCandies(candies, extraCandies);
 
-    // Print the final result
+    // Just by fetching the returned array by the function, it'll give 1 or 0, and not 'true' and 'false', this is why this step:
     cout << "\nResult: [ ";
-    for (bool val : result) {
-        // Output 'true' / 'false' instead of 1 / 0
-        cout << (val ? "true" : "false") << " "; 
+    for (bool val : result) {                    //for val in result array
+        cout << (val ? "true" : "false") << " "; //Short form of a if-else
     }
     cout << "]" << endl;
 
@@ -116,4 +114,19 @@ Enter the number of kids: 6
 Enter the candies for each kid: 2 3 5 1 3 4
 Enter the number of extra candies: 2
 Result: [ false true true false true true ]
+*/
+/*
+What I learnt:
+1. The *max_element(arr start, arr end) for finding the maximum element in an array (by the header <algorithm>)
+2. Without the '*', the variable stores the location of the max_element, and not the value;
+3. In some case, even if we want to store the location, the variable can be defined as type 'auto'
+   example: auto max_location = max_element(candies.begin(), candies.end());
+4. If there's an if-else statement for only 1 condition, and we need to return bool values
+   we can do it by just writing: return(condition), and no need for if-else; as by default true or false
+   for that condition will be returned. (As we can see in line 73)
+
+What I revised:
+1. Concept of saving time: The function taking the parameter as 'call-by-reference (&)' and then using 'const' so that it doesn't change by mistake
+2. The short form of an if-else statement: (cal>5 ? "if true, text written here will print" : "if false, this will")
+3. For a function to return a dynamic array of bool type, it should be of type: vector<bool>
 */
