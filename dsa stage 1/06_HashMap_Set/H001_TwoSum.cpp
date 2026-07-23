@@ -61,27 +61,27 @@ public:
 int main() {
     Solution solver;
 
-    int size;
+    int size;                                         //Asking size of array from user
     cout << "Enter size of array: ";
     cin >> size;
 
-    vector<int> nums;
+    vector<int> nums;                                //Creating the array
     nums.reserve(size);
 
-    cout << "Enter " << size << " elements: ";
+    cout << "Enter " << size << " elements: ";       //Asking for the elements for the array
     for (int i = 0; i < size; i++) {
         int element;
         cin >> element;
         nums.push_back(element);
     }
 
-    int target;
+    int target;                                      //Asking the user for the target
     cout << "Enter target: ";
     cin >> target;
 
-    vector<int> ans = solver.twoSum(nums, target);
+    vector<int> ans = solver.twoSum(nums, target);   //Storing the returned indexes to a vector 'ans'
 
-    if (!ans.empty()) {
+    if (!ans.empty()) {                              //Printing the elements in 'ans' (which stores the returned index from the function)
         cout << "Indices: [" << ans[0] << ", " << ans[1] << "]\n";
         cout << "Values: " << nums[ans[0]] << " + " << nums[ans[1]] << " = " << target << "\n";
     } else {
