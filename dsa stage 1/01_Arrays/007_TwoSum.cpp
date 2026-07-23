@@ -31,7 +31,7 @@ and then with that number(let's call it num1), we again traverse through the arr
 and try with the other numbers after that num1's location, right?
 And then whereever it matches, we'll just return that, right?
 */
-#include <iosteam>
+#include <iostream>
 #include <vector>
 using namespace std;
 
@@ -53,21 +53,37 @@ public:
 int main(){
     Solution solver;
 
-    int size;
+    int size;                            //Taking size of array
     cout<<"Enter size of array: ";
     cin>>size;
 
-    vector<int>nums[size];
-    int j;
-    for (int i=0; i<nums.size(); i++)[
-        cin>>j;
-        nums.push_back(j);
-    ]
+    vector<int>nums;                    //Defining and taking in elements in the array
+    int element;
+    cout<<"Enter the elements in the array: ";
+    for (int i=0; i<size; i++){
+        cin>>element;
+        nums.push_back(element);
+    }
 
-    int target;
+    int target;                         //Asking for target value
     cout<<"Enter target No: ";
     cin>>target;
 
-    cout<<solver.twoSum(nums, target);
+    vector<int> ans = solver.twoSum(nums, target);     //Creating another vector array to capture result from function
+
+    if (!ans.empty()) {                                //Displaying the vector elements which captured the indexes from the function
+        cout << "Output: [" << ans[0] << ", " << ans[1] << "]" << endl;
+    } else {
+        cout << "No solution found." << endl;
+    }
+
+    return 0;
     
 }
+/*
+Result:
+Enter size of array: 4
+Enter the elements in the array: 2 7 11 15
+Enter target No: 18
+Output: [1, 2]
+*/
