@@ -29,7 +29,7 @@ a+b, a+c, a+d, a+e, b+c, b+d, b+e, c+d, c+e, d+e, right?
 So with this stratergy, let's traverse though the array and take 1 number at a time, right?
 and then with that number(let's call it num1), we again traverse through the array (excluding that same number), 
 and try with the other numbers after that num1's location, right?
-And then whereever it matches, we'll just return that, right?
+And then wherever it matches, we'll just return that, right?
 */
 #include <iostream>
 #include <vector>
@@ -86,4 +86,36 @@ Enter size of array: 4
 Enter the elements in the array: 2 7 11 15
 Enter target No: 18
 Output: [1, 2]
+*/
+//........................................................................................................
+/*
+Okay, the program written above was my approach, but to make it optimized, we can directly return the indexes,
+instead of storing them in a vector, it would be something like:
+*/
+class Solution {
+public:
+    vector<int> twoSum(vector<int>& nums, int target) {
+        for (int i = 0; i < nums.size(); i++) {
+            for (int j = i + 1; j < nums.size(); j++) {
+                if (nums[i] + nums[j] == target) {
+                    return {i, j}; // A Direct, cleaner return
+                }
+            }
+        }
+        return {}; // Returns an empty vector if no match is found
+    }
+};
+//........................................................................................................
+/*
+The above 2 methods are Brutforce methods, having a Time Complexity of O(n^2) because of using nested loops.
+However, this would run slowly with larger inputs.
+Hence, the best way to solve this 'Two Sum' problem is using a hash map (unordered_map) 
+to track seen numbers and their indices in a single pass.
+.......
+Now I know we haven't started has maps yet, but okay, let's try understanding how the code looks like with it, how to
+go through it, and as it is, it'll give us a little early exposure to that concept.
+Okay, first I'm going to write the hash map code, and then I'll write the explaination.
+..
+..
+Please go to file H001_TwoSum.cpp under HashMap..I'll explain it there so that it area remains clean to array concepts.
 */
