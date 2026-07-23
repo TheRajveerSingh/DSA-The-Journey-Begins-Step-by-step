@@ -87,6 +87,6 @@ Sorted Array:
 */
 //..........................................................................................
 /* 
-In in future, you forget why you used & and const in functions, 
+If in future, you forget why you used & and const in functions, 
 check its meaning in the next file: Understandingfunctions.md.
 */
