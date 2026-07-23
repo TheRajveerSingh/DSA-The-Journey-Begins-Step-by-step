@@ -26,20 +26,17 @@ Okay, this is the code for the problem using Hashmap:
 #include <iostream>
 #include <vector>
 #include <unordered_map>
-
 using namespace std;
 
 class Solution {
 public:
     vector<int> twoSum(const vector<int>& nums, int target) {
-        // HASH MAP: Stores { number : index }
-        unordered_map<int, int> seen;
-        
-        // Performance boost: Pre-allocates memory so the map doesn't resize while running
-        seen.reserve(nums.size());
 
-        // Single pass through the array - O(N) Time Complexity
-        for (int i = 0; i < static_cast<int>(nums.size()); i++) {
+        unordered_map<int, int> seen; // HASH MAP: Stores { number : index }
+        
+        seen.reserve(nums.size()); // Performance boost: Pre-allocates memory so the map doesn't resize while running
+
+        for (int i = 0; i < static_cast<int>(nums.size()); i++) { // Single pass through the array - O(N) Time Complexity
             int current_num = nums[i];
             int complement = target - current_num;
 
@@ -54,7 +51,7 @@ public:
             seen[current_num] = i;
         }
 
-        return {}; // No pair found
+        return {}; // Return empty if no pair found
     }
 };
 
