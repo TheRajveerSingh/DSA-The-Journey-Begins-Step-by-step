@@ -133,5 +133,9 @@ where basically, here too, we are pre-allocating size of memory to the hashmap f
 ..............................
 Now, coming to the function,
 First we created a hashmap, right? with: unordered_map<int, int> hashmap_name;
+and then we allocate a size to it beforehand: seen.reserve(nums.size());
+Now, we traverse through the array (nums), and for every element in it, we find its complement too. (such that element taken + complement = target).
+-> To take element one by one from the array:                                  int current_num = nums[i];
+-> To find the number such that adding with the element will equal to target:  int complement = target - current_num;
 
 */
