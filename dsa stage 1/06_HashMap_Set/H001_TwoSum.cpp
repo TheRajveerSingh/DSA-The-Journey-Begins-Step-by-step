@@ -49,7 +49,7 @@ public:
                 return {seen[complement], static_cast<int>(i)};
             }
 
-            // 2. INSERT: Save current number and its index for future numbers to find
+            // 2. INSERT: Save current number and its index for future numbers to find (If not found in the hashmap)
             seen[current_num] = static_cast<int>(i);
         }
 
@@ -137,5 +137,39 @@ and then we allocate a size to it beforehand: seen.reserve(nums.size());
 Now, we traverse through the array (nums), and for every element in it, we find its complement too. (such that element taken + complement = target).
 -> To take element one by one from the array:                                  int current_num = nums[i];
 -> To find the number such that adding with the element will equal to target:  int complement = target - current_num;
+......
+Now let's see what happened here:
+       if (seen.find(complement) != seen.end()) {
+            return {seen[complement], static_cast<int>(i)};
+            }
+            seen[current_num] = static_cast<int>(i);
+        }
+look, let's take it slowly from here,
+1. seen.end() - Acts as a marker at the very end of the hashmap, after all key, value pairs.
+                The "Past-the-End" sentinel/boundary marker after all valid entries.
+2. seen.find(complement) - Acts like a traversal through the whole hashmap..
+                           Efficient search/traversal mechanism.
+If through the hashmap, each traversal through the hashmap for finding complement 
+doesn't reach the very last marker (seen.end()), that means it was found in between..
+And then,
+if found, we return the elements: return {seen[complement], static_cast<int>(i)};
+and if not, we add its location(index) to the hashmap: seen[current_num] = static_cast<int>(i); 
+3. != seen.end() - We stopped before hitting the boundary line, meaning we found it.
+4. return vs insert = Return the matching pair immediately if found; otherwise, 
+                      write the current number into our map and keep going.
+This is how Hash Maps turn an O(n^2) search into a single O(n) pass.
+.....................................................................
+# Use of static_cast:
+static_cast<int>(i) is C++'s explicit way of saying: 
+"Convert the variable i from its current data type (size_t) into a standard int."
 
+Why do we write it explicitly?
+If we write return {seen[complement], i}; without static_cast, 
+C++ will still try to convert it automatically (an implicit conversion).
+
+However, because going from 64-bit (size_t) to 32-bit (int) has a slight risk of losing data if the number is huge, 
+strict C++ compilers will raise a warning:  "Implicit conversion loses integer precision: 'size_t' to 'int'".
+
+By adding static_cast<int>(i), we tell the compiler:
+"I know what I'm doing. i is small enough to fit in a standard int, so convert it intentionally and don't warn me about it."
 */
