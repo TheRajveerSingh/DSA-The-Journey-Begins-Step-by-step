@@ -172,4 +172,10 @@ strict C++ compilers will raise a warning:  "Implicit conversion loses integer p
 
 By adding static_cast<int>(i), we tell the compiler:
 "I know what I'm doing. i is small enough to fit in a standard int, so convert it intentionally and don't warn me about it."
+......................................................................
+Okay, one more thing, here:
+seen[current_num] = static_cast<int>(i);
+here, 'current_num' is the key, while 'i' is the value.
+Key: current_num (the actual number from the array, e.g., 7)
+Value: i (its index position in the array, e.g., 0)
 */
