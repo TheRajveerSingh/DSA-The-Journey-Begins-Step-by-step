@@ -177,5 +177,5 @@ Okay, one more thing, here:
 seen[current_num] = static_cast<int>(i);
 here, 'current_num' is the key, while 'i' is the value.
 Key: current_num (the actual number from the array, e.g., 7)
-Value: i (its index position in the array, e.g., 0).
+Value: i (its index position in the array, e.g., 0)
 */
