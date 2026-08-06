@@ -112,7 +112,7 @@ However, this would run slowly with larger inputs.
 Hence, the best way to solve this 'Two Sum' problem is using a hash map (unordered_map) 
 to track seen numbers and their indices in a single pass.
 .......
-Now I know we haven't started has maps yet, but okay, let's try understanding how the code looks like with it, how to
+Now I know we haven't started hash maps yet, but okay, let's try understanding how the code looks like with it, how to
 go through it, and as it is, it'll give us a little early exposure to that concept.
 Okay, first I'm going to write the hash map code, and then I'll write the explaination.
 ..
