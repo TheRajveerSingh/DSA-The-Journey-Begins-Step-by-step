@@ -136,5 +136,5 @@ What I learnt:
 What I revised:
 1. Concept of saving time: The function taking the parameter as 'call-by-reference (&)' and then using 'const' so that it doesn't change by mistake
 2. The short form of an if-else statement: (cal>5 ? "if true, text written here will print" : "if false, this will")
-3. For a function to return a dynamic array of bool type, it should be of type: vector<bool>
+3. For a function to return a dynamic array of bool type, it should be of type: vector<bool>.
 */
