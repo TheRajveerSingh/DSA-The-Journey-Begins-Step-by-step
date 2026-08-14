@@ -2,7 +2,7 @@ Okay,<br>
 hmm, so now, its time to start arrays..<br>
 basically, the first step towards real DSA<br>
 For the readers, I just want to say, that I don't know alot about arrays yet. <br>
-Unintentionally, I started using the concept of arrays in the last 3-4 programs, if you can see.<br>
+Unintentionally, I started using the concept of arrays in the last 3-4 programs, if you can seen.<br>
 But anyways, let's see how it does.<br>
 In this md file, I'll start with very basic knowledge about arrays, and as I go further,<br> I'll try to keep adding new stuff about arrays as I learn.<br>
 Thuough I have my copy, if everything is here together, I feel as if it would be easier to revise when I need to..<br>
