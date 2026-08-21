@@ -117,4 +117,150 @@ Now, the compare the difference between the minimum prices, and all larger eleme
 This will be stored in 'max_profit' which will only update if a larger profit is found 
 than the already stored one.
 At the end of the traversal, the max_profit will be printed.
+.....
+One more thing I'd like to add by my side is to also print the right index number, 
+along with their values (The buy and sell value) for which the max_profit came.
+So whenever the max_profit will update. I'd store the minimum value's index for that time
+as the 'buyIndex' and the current index as the 'sellIndex'.
+*/
+//.......................................................................................................
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main() {
+    int n;
+    cout<<"Enter the size of the array 'price' :";
+    cin >> n;
+
+    if (n == 0) {
+        cout << -1 << endl;
+        return 0;
+    }
+
+    vector<int> price(n);
+    cout<<"Enter the array 'price' :"<<endl;
+    for (int i = 0; i < n; i++) {
+        cin >> price[i];
+    }
+
+    if (n < 2) {
+        cout << 0 << endl;
+        return 0;
+    }
+
+    int minPrice = price[0];
+    int minIndex = 0;
+
+    int maxProfit = 0;
+    int buyIndex = 0;
+    int sellIndex = 0;
+
+    for (int i = 1; i < n; i++) {
+        int profit = price[i] - minPrice;
+
+        if (profit > maxProfit) {
+            maxProfit = profit;
+            buyIndex = minIndex;
+            sellIndex = i;
+        }
+
+        if (price[i] < minPrice) {
+            minPrice = price[i];
+            minIndex = i;
+        }
+    }
+
+    cout << "Max Profit: " << maxProfit << endl;
+    cout << "Buy Index: " << buyIndex << ", Buy Price: " << price[buyIndex] << endl;
+    cout << "Sell Index: " << sellIndex << ", Sell Price: " << price[sellIndex] << endl;
+
+    return 0;
+}
+//....Same program in the form of a function:
+//(Either comment the upper program while running, or the lower one.)
+#include <iostream>
+#include <vector>
+using namespace std;
+
+class Solution {
+public:
+    int buyIndex, sellIndex, buyPrice, sellPrice;
+
+    int maxProfit(vector<int>& price) {
+        int n = price.size();
+        if (n < 2) return 0;
+
+        int minPrice = price[0];
+        int minIndex = 0;
+
+        int maxProfit = 0;
+        buyIndex = 0;
+        sellIndex = 0;
+
+        for (int i = 1; i < n; i++) {
+            int profit = price[i] - minPrice;
+
+            if (profit > maxProfit) {
+                maxProfit = profit;
+                buyIndex = minIndex;
+                sellIndex = i;
+            }
+
+            if (price[i] < minPrice) {
+                minPrice = price[i];
+                minIndex = i;
+            }
+        }
+
+        buyPrice = price[buyIndex];
+        sellPrice = price[sellIndex];
+
+        return maxProfit;
+    }
+};
+
+int main() {
+    int n;
+    cout<<"Enter the size of the array 'price' :";
+    cin >> n;
+
+    if (n == 0) {
+        cout << -1 << endl;
+        return 0;
+    }
+
+    vector<int> price(n);
+    cout<<"Enter the array 'price' :"<<endl;
+    for (int i = 0; i < n; i++) {
+        cin >> price[i];
+    }
+
+    Solution sol;
+    int profit = sol.maxProfit(price);
+
+    cout << "Max Profit: " << profit << endl;
+
+    if (n >= 2) {
+        cout << "Buy Index: " << sol.buyIndex << ", Buy Price: " << sol.buyPrice << endl;
+        cout << "Sell Index: " << sol.sellIndex << ", Sell Price: " << sol.sellPrice << endl;
+    }
+
+    return 0;
+}
+/*
+Results:
+Enter the size of the array 'price' :7
+Enter the array 'price' :
+2 30 15 10 8 25 80  
+Max Profit: 78
+Buy Index: 0, Buy Price: 2
+Sell Index: 6, Sell Price: 80
+...
+Enter the size of the array 'price' :9
+Enter the array 'price' :
+10 6 2 6 3 6 0 50 43 5
+Max Profit: 50
+Buy Index: 6, Buy Price: 0
+Sell Index: 7, Sell Price: 50
 */
