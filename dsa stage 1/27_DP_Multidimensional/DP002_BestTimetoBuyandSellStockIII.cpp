@@ -1,5 +1,5 @@
 // So I came across a question during one of my placement exams (7-11), and here's how it was:
-/*
+/*....................................................................................................
 Question:
 You are given a positive integer array "price" consisting of n elements. 
 "price" contains prices of a share throughout the day in the order of their occurrences. 
@@ -29,5 +29,6 @@ Input 2:
 Output: 142 (Trans 1: 65 - 5 = 60, Trans 2: 90 - 8 = 82. Total: 142)
 */
 //....................................................................................................
-// Stratergy:
-//
+/* Prerequisite:
+(To understand this problem, you might first want to refer to file 'DP001_BestTimeToBuyAndSellStock.cpp) 
+*/
