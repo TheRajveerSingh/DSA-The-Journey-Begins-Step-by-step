@@ -84,6 +84,19 @@ Array after removing duplicates: 1 3 5 6 7
 /*
 Okay, I know this is our first time doing a two-pointer sum, but don't worry.
 This one is easier to understand.
-So like, let's first go with what are two pointers?
-Basically, 
+'Two-pointers' is just a type of method of solving prblems.
+Unlike "Arrays" or "Strings", it isn't a data structure, but mostly a method.
+So like, let's first go with what are pointers?
+Basically,
+in c++, a pointer is any variable which is used to keep track of a position in an array/string.
+So sometimes, in a given array, we might need more than one pointer, for different functions.
+Might be one is used for pointing every element one by one, 
+one might be used for pointing elements every 2 steps, idk, there's many probabilies.
+..okay okay,
+let me make it easier for you to understand..
+See this question.
+What has it asked?
+Basically, we're given a sorted array, here, right?
+Now,
+
 */
