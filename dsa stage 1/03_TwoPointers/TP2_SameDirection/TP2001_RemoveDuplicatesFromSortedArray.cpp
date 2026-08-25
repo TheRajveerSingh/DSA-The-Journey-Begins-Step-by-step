@@ -82,8 +82,7 @@ Number of unique elements: 5
 Array after removing duplicates: 1 3 5 6 7 
 */
 /*
-Okay, I know this is our first time doing a two-pointer sum, but don't worry.
-This one is easier to understand.
+This is a 'two-pointer' type of Sum Problem.
 'Two-pointers' is just a type of method of solving prblems.
 Unlike "Arrays" or "Strings", it isn't a data structure, but mostly a method.
 So like, let's first go with what are pointers?
@@ -97,6 +96,14 @@ let me make it easier for you to understand..
 See this question.
 What has it asked?
 Basically, we're given a sorted array, here, right?
-Now,
-
+Now, what do we need to do here?
+If you observe, we've kept 2 variables, as indexes for the given array.
+i → scans through the array (the reading pointer)
+k → tells us where to place the next unique element (The writing pointer).
+so,
+With the help of both of these pointers, we are able to keep all unique values of the array
+in the starting of the array, and the rest duplicate ones (or not needed ones)
+are in the side of the array (after 'k'th value).
+So we get our answer array be printing the first K values of the array.
+This is because K helps keep track of how nany unique elements in the array we came across to.
 */
