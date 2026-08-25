@@ -20,7 +20,6 @@ Input: nums = [0,0,1,1,1,2,2,3,3,4]
 Output: 5, nums = [0,1,2,3,4,_,_,_,_,_]
 Explanation: Your function should return k = 5, with the first five elements of nums being 0, 1, 2, 3, and 4 respectively.
 It does not matter what you leave beyond the returned k (hence they are underscores).
- 
 
 Constraints:
 1 <= nums.length <= 3 * 104
@@ -81,4 +80,10 @@ Enter the size of array: 7
 Enter 7 sorted elements: 1 1 3 5 6 7 7
 Number of unique elements: 5
 Array after removing duplicates: 1 3 5 6 7 
+*/
+/*
+Okay, I know this is our first time doing a two-pointer sum, but don't worry.
+This one is easier to understand.
+So like, let's first go with what are two pointers?
+Basically, 
 */
