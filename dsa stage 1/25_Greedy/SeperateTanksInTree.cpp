@@ -71,3 +71,4 @@ but specifically known in competitive programming platforms as
 "Destroying Roads" or "Disconnect Tanks".
 */
 //..........................................................................................
+//Stratergy:
