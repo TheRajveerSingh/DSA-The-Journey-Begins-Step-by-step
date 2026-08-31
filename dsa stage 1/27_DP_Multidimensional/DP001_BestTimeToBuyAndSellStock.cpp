@@ -61,6 +61,7 @@ Basically, at what index to buy and then sell so that we get the max profit, rig
 Additionally, if the array elements(stocks) only detoriate, better not buy anything,
 so profit should be printed as '0'.
 If the array is empty, to print '-1'.
+If number of elements is only 1, to print '0'.
 ...
 Thinking 1:
 At first glance, we may try to just find the minimum value in the array,
@@ -88,7 +89,7 @@ Thinking 3:
 Okay, let's do one thing.
 Let's traverse through the array, and take the first element as the "mimimum", okay?
 Now, as we go through the array, we start noting down the 'difference'(or profit) we're
-getting with the elements which are after it (let's say in a variable named 'max_profit).
+getting with the elements which are after it (let's say in a variable named 'max_profit').
 If a new profit is found, greated than the value already stored in max_profit, 
 we'll substitute it, right?
 Like:
