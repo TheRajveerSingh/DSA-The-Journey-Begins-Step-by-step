@@ -95,3 +95,38 @@ Enter 16 element: 9
 The original array: 1 3 56 43 56 8 9 3 2 67 43 67 3 23 23 2 9 
 The array without duplicates: 1 3 56 43 8 9 2 67 23 
 */
+/*
+LEARNING:
+Okay, there's a difference between unordered_set and unordered_map:
+1. #include <unordered_set>
+-> defined by: unordered_set<int> name;
+-> The unordered_set only stores unique elements (just keys)
+-> Its mainly used for checking the existence or uniqueness.
+-> It cannot modify elements directly.
+-> Common use case is tracking visited IDs, removing Duplicates.
+2. #include <unordered_map>
+-> defined by: unordered_map<keytype, valuetype> name; 
+   ex: unordered_map<int, string> name;
+-> The unordered_map stores key-value pairs
+-> its maily used for mapping a unique identifier to data.
+-> It can read/modify values using the [] operator.
+-> Common use case is counting frequencies, dictionaries, caches.
+Both use a hash table under the hood, meaning they both offer lightning-fast O(1) 
+average time complexity for insertions, lookups, and deletions.
+...........................................................................
+*/
+/*
+# While iterating through the Map:
+When we loop through an unordered_map, each item is treated as a std::pair.
+We can access them using .first and .second.
+Ex: unordered_map<int, int> name;
+where,
+pair.first refers to the key (the first int)
+pair.second refers to the Value (the second int)
+Iteration Code:
+for (const auto& pair : myMap){
+    std::cout<< "Key: " << pair.first << "Value: " <<pair.second <<"\n";}
+*/
+/*
+Next Learn: What is Auto? (Automatic type detuction)
+*/
