@@ -30,5 +30,5 @@ Output: 142 (Trans 1: 65 - 5 = 60, Trans 2: 90 - 8 = 82. Total: 142)
 */
 //....................................................................................................
 /* Prerequisite:
-(To understand this problem, you might first want to refer to file 'G001_BestTimeToBuyAndSellStock.cpp) 
+(To understand this problem, you might first want to refer to file 'G002_BestTimeToBuyAndSellStock.cpp) 
 */
