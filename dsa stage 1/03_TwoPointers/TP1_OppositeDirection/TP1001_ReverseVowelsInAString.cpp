@@ -20,3 +20,17 @@ Output: "leotcede"
 Stratergy:
 We have already solved this problem using basic strings concepts (S004_ReverseVowelsInAString.cpp).
 Now, this time, we'll solve this problem using Two Pointers Concept.
+What we'll be doing is taking two pointers:
+One that goes from the starting of the string to the middle..  ------->  (Left to Right)
+One that comes from the ending of the string to the middle..   <-------  (Right to Left)
+Now, The first vowel from the starting and the first vowel from the ending will be swapped.
+The second vowel from the starting and the second vowel from the ending will be swapped.
+And so one, right?
+So one pointer: int left = 0;
+And the other: int right = s.length() - 1;
+..Now this approach takes less Space then the approach we used using basic string concepts.
+Because we aren't creating any extra string to store vowels.
+So Space Complexity = O(1)
+*/
+//..................................................................................
+
