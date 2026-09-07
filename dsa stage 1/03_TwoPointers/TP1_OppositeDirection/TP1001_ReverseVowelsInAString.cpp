@@ -33,4 +33,58 @@ Because we aren't creating any extra string to store vowels.
 So Space Complexity = O(1)
 */
 //..................................................................................
+#include <iostream>
+using namespace std;
+class Solution {
+private:
+    bool isVowel(char ch) {
+        return ch == 'a' || ch == 'e' || ch == 'i' ||
+               ch == 'o' || ch == 'u' ||
+               ch == 'A' || ch == 'E' || ch == 'I' ||
+               ch == 'O' || ch == 'U';
+    }
 
+public:
+    string reverseVowels(string s){
+        //creating both pointers
+        int left = 0;
+        int right = s.length() - 1;
+
+        while(left<right){
+
+            //To skip those alphabets which aren't vowels from left to right
+            while(left<right && !isVowel(s[left])){
+                left++;
+            }
+
+            //To skip those alphabets which aren't vowels from right to left
+            while(left<right && !isVowel(s[right])){
+                right--;
+            }
+
+            //To Swap the two aplabets where the pointers are right now
+            //(These two alphabets are vowels)
+            swap(s[left],s[right]);
+
+            //After swapping, pointers keep going towards the middle
+            left++;
+            right--;
+        }
+        return s;
+    }
+
+};
+int main(){
+    Solution solver;
+    string s;
+    cout<<"Enter a string: ";
+    getline(cin, s);
+    cout<<solver.reverseVowels(s);
+}
+/*
+Result:
+Enter a string: aeiouAEIOU
+UOIEAuoiea
+Enter a string: XXaXXXeXXXIXOXXU    
+XXUXXXOXXXIXeXXa
+*/
