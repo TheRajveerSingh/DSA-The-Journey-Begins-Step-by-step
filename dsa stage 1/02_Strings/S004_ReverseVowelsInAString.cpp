@@ -27,42 +27,33 @@ I'll replace it with a letter from s2 (which I'm traversing oppositely).
 okay?
 */
 #include <iostream>
-class Solution {
-private:
-    bool isVowel(char ch) {
-        return ch == 'a' || ch == 'e' || ch == 'i' ||
-               ch == 'o' || ch == 'u' ||
-               ch == 'A' || ch == 'E' || ch == 'I' ||
-               ch == 'O' || ch == 'U';
+using namespace std;
+class Solution{
+    private:     //AThis is just a helper function which the main function will be using.
+    bool isVowel(char ch){  //bool because we'll only be returning true or false - whether its a vowel or not
+        return ch=='a' || ch=='e' || ch=='i' || ch=='o' || ch=='u'
+        || ch=='A' || ch=='E' || ch=='I' || ch=='O' || ch=='U';
     }
+    public:
+    string reverseVowels(string s){
+        string vowels =" ";
 
-public:
-    string reverseVowels(string s) {
-
-        string vowels = "";
-
-        // Step 1: Store all vowels
-        for(int i = 0; i < s.length(); i++) {
-            if(isVowel(s[i])) {
+        //Step 1: To Store all Vowels
+        for (int i = 0; i<s.length(); i++){
+            if(isVowel(s[i])){
                 vowels += s[i];
             }
         }
 
-        // Step 2: Replace vowels from the end
-        int j = vowels.length() - 1;
+        //Step 2: Replacing vowels from the end
+        int j = vowels.length() -1; //For indexing from the last
 
-        for(int i = 0; i < s.length(); i++) {
-            if(isVowel(s[i])) {
-                s[i] = vowels[j];
-                j--;
+        for (int i=0; i<s.length(); i++){
+            if(isVowel(s[i])){
+                s[i]=vowels[j];
+                j--;                //So that index decreases
             }
         }
-
         return s;
     }
 };
-
-int main(){
-    string s;
-    cout<<"Enter a String: ";
-}
