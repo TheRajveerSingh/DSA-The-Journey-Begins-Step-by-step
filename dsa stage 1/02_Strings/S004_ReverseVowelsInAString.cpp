@@ -36,9 +36,9 @@ class Solution{
     }
     public:
     string reverseVowels(string s){
-        string vowels =" ";
+        string vowels =" ";  //Creating an empty new string to store vowels
 
-        //Step 1: To Store all Vowels
+        //Step 1: To Store all Vowels from given string
         for (int i = 0; i<s.length(); i++){
             if(isVowel(s[i])){
                 vowels += s[i];
@@ -57,3 +57,26 @@ class Solution{
         return s;
     }
 };
+int main(){
+    string s;
+    cout<<"Enter a string: ";
+    getline(cin, s);
+    Solution solver;
+    cout<<solver.reverseVowels(s);
+}
+/*
+Result:
+Enter a string: IceCreAm
+AceCreIm
+Enter a string: leetcode
+leotcede
+Enter a string: AEIOUaeiou      
+uoieaUOIEA
+*/
+//......................................................
+/*
+Notes:
+1. C++ doesn't have a function isVowel(), that's why we had to create our own function.
+2. C++ doesn't have reverse indexing like(-1, -2,..) like Python. That's why we indexed using the string length - 1.
+3. Though I've solved this problem using basic string concepts,, this problem is better solved using Two Pointers concept.
+*/
