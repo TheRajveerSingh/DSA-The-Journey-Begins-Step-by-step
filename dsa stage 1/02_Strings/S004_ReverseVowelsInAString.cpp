@@ -78,5 +78,6 @@ uoieaUOIEA
 Notes:
 1. C++ doesn't have a function isVowel(), that's why we had to create our own function.
 2. C++ doesn't have reverse indexing like(-1, -2,..) like Python. That's why we indexed using the string length - 1.
-3. Though I've solved this problem using basic string concepts,, this problem is better solved using Two Pointers concept.
+3. Though I've solved this problem using basic string concepts,, this problem is better solved 
+   using Two Pointers concept. (File: TP1001_ReverseVowelsInAString.cpp)
 */
