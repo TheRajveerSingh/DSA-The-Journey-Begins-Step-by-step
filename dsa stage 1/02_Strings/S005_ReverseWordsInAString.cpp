@@ -70,3 +70,7 @@ Blue is Sky The
 Enter a string: Why   is    there so  confusing           spaces  randomly 
 randomly spaces confusing so there is Why
 */
+/*
+Note: This same problem can be solved using Two Pointers, 
+Check file "TP1002_ReverseWordsInAString.cpp".
+*/
