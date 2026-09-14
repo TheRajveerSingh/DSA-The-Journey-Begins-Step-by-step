@@ -193,10 +193,11 @@
 
 ### 5 Algorithms for Graphs
 
-| Algorithm | Primary Purpose | Key Strength / Core Characteristic |
-|---|---|---|
-| Dijkstra | Single-Source Shortest Path | Blazing fast O((V+E) log V) but fails with negative weights. |
-| Bellman-Ford | Single-Source Shortest Path | Slower, but safely handles negative weights and cycles. |
-| Floyd-Warshall | All-Pairs Shortest Path | Finds all paths at once using simple matrix loops. |
-| Kruskal | Minimum Spanning Tree (MST) | Edge-based; brilliant when edges are already sorted. |
-| Prim | Minimum Spanning Tree (MST) | Vertex-based; superior for dense, highly connected graphs. |
+| Algorithm | Primary Purpose | Time Complexity | How it Works (The Core Strategy) |
+|---|---|---|---|
+| Dijkstra | Shortest Path (From one start node to all others) | O((V + E) log V) (Fast) | Greedy Exploration: It starts at the source and always visits the closest unvisited neighbor first. It continuously updates the shortest known distances to adjacent nodes, locking them in one by one. |
+| Bellman-Ford | Shortest Path (From one start node to all others) | O(V × E) (Slow) | Brute-Force Relaxation: It systematically reviews every single edge in the graph and updates distances. It repeats this full check V - 1 times. This thoroughness allows it to accurately process negative weights and detect negative loops. |
+| Floyd-Warshall | Shortest Path (Between all pairs of nodes) | O(V³) (Very Slow) | The Middleman Test: It loops through every node, testing it as a potential "detour" between every other pair of nodes. If going through the middleman node makes a path shorter, it updates the grid matrix. |
+| Kruskal | Minimum Spanning Tree (Connects all nodes cheaply) | O(E log E) (Fast) | Edge Picker: It throws all the graph's edges into a pile, sorts them from cheapest to most expensive, and picks them one by one. It rejects any edge that would accidentally create a closed loop. |
+| Prim | Minimum Spanning Tree (Connects all nodes cheaply) | O((V + E) log V) (Fast) | Organic Growth: It picks a single starting node and acts like a growing puddle. It looks at all edges leading out of its current boundary and greedily grabs the single cheapest edge to pull a new node into the tree. |
+
