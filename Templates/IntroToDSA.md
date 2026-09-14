@@ -190,3 +190,13 @@
 | **Graphs** (Adjacency Matrix/List) | **Bitwise Computations** (Masking, parity) | **Greedy Paradigm** (Local optimum choices) |
 | **Tries** (Prefix Trees) | **String Matching** (KMP, Rabin-Karp) | **Dynamic Programming** (1D/2D Tabulation & Memoization) |
 | **Disjoint Set Union (DSU)** | **Matrix Traversal** (Flood Fill, Direction vectors) | **Bit Manipulation Tricks** (XOR cancellation, bitmask DP) |
+
+### 5 Algorithms for Graphs
+
+| Algorithm | Primary Purpose | Key Strength / Core Characteristic |
+|---|---|---|
+| Dijkstra | Single-Source Shortest Path | Blazing fast O((V+E) log V) but fails with negative weights. |
+| Bellman-Ford | Single-Source Shortest Path | Slower, but safely handles negative weights and cycles. |
+| Floyd-Warshall | All-Pairs Shortest Path | Finds all paths at once using simple matrix loops. |
+| Kruskal | Minimum Spanning Tree (MST) | Edge-based; brilliant when edges are already sorted. |
+| Prim | Minimum Spanning Tree (MST) | Vertex-based; superior for dense, highly connected graphs. |
