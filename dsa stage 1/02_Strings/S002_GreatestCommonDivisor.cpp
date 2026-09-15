@@ -73,6 +73,9 @@ The Greatest Common Substring which can divide both given strings is: ABC
 Enter String 1: ADvADvADv
 Enter String 2: ADvADvADvADvADv
 The Greatest Common Substring which can divide both given strings is: ADv
+Enter String 1: ADvADvADv
+Enter String 2: ADvADvADvADvADvADv
+The Greatest Common Substring which can divide both given strings is: ADvADvADv (because it can fit one time in string 1 and two times in string 2).
 
 Result when the toUpper is used:
 Enter String 1: ADvADvADv                         
