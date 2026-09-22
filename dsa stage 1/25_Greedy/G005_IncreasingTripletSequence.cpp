@@ -58,7 +58,21 @@ using namespace std;
 class Solution{
     public:
     bool increasingTriplet(vector<int>& nums){
-        
+        int first = INT_MAX; //to compare smallest so far
+        int second = INT_MAX; //to compare second smallest number in increasing pair
+
+        for (int num: nums){
+            if (num<= first){
+                first = num; //Found a smallest number for now
+            }
+            else if (num<=second){
+                second = num; //Found a number that can be the second smallest element. As its greater than the first one, but smaller than the current smallest.
+            }
+            else{
+                return true; //If a number is found that is greater than first and second, than that literally means that there is a pair existing for first<second<num
+            }
+        }
+        return false; 
     }
 };
 int main(){
@@ -76,3 +90,17 @@ int main(){
     if (solver.increasingTriplet(nums)){cout<<"True";}  //We don't need to compare bool to anything.
     else {cout<<"False";}
 }
+/*
+Result:
+Enter the size of the array: 5
+Enter the elements in the array: 5 4 3 2 1
+False
+Enter the size of the array: 6
+Enter the elements in the array: 2 1 5 0 4 6
+True
+*/
+/*
+Something to Learn:
+To give the maximum value for int to a variable, we can given INT_MAX
+Similarly to give the smallest value for int, we can give INT_MIN
+*/
