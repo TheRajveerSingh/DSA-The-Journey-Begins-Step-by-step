@@ -99,3 +99,4 @@ Enter the size of the array: 5
 Enter the elements in the array: 2 1 7 5 6
 True
 */
+//Check file "G005_IncreasingTripletSequence.cpp" under the Greedy Folder for finding the solution with O(n) time complexity.
