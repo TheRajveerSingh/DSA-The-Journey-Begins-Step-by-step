@@ -27,3 +27,23 @@ Explanation: The groups are "a" and "bbbbbbbbbbbb". This compresses to "ab12".
 After modifying the input array in-place, the first 4 characters of chars should be ["a","b","1","2"].
 */
 //....................................................................................................................
+#include <iostream>
+#include <vector>
+using namespace std;
+class Solution{
+    public:
+    int compress (vector<char>& char1){
+        int output = 0;
+        int pointer1 = 0;
+        for (int i = 1; i<char1.size(); i++){
+            if (char1[i]!=char1[i-1]){
+                int size1 = i - pointer1;
+                if (size1 == 1){output += 1;}
+                else if {size1>=10}{output += 3;}
+                else {output += 2;}
+                pointer1 = i;
+            }
+        }
+    return output;
+    }
+};
