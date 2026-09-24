@@ -27,6 +27,7 @@ Explanation: The groups are "a" and "bbbbbbbbbbbb". This compresses to "ab12".
 After modifying the input array in-place, the first 4 characters of chars should be ["a","b","1","2"].
 */
 //....................................................................................................................
+/*This was the algorithm I thought of first:
 #include <iostream>
 #include <vector>
 using namespace std;
@@ -49,3 +50,13 @@ class Solution{
     return output;
     }
 };
+Basically, with the help of two pointers, pointer1 on every starting of a group of char, 
+while i on the first char of the next group. By calculating the difference between i and pointer1, I get the size of that group.
+Now, after getting the size, if its only '1', I'll add only 1. Why? because that the example of [a], it'll show only '1'.
+For cases above 10, it'll add '3', why? because [a,a,a,..] 12 a's would give [a12] which would be equal to adding '3'.
+For other cases, of group sizes from 2 to 9, for example, [a,a,a,a] would give [a4], so we'll add '2' to the output.
+However,
+When I ran this on Leetcode, it expected me to show the overwritten array, ex: ['a', '1', 'b', 'b', '2'], and
+my code just tried printing the output. So anyways, 
+let's try implementing it in the leetcode way, but I'll try to print both the array, and the output number.
+*/
