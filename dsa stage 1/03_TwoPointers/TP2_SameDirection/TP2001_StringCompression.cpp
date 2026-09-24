@@ -59,4 +59,6 @@ However,
 When I ran this on Leetcode, it expected me to show the overwritten array, ex: ['a', '1', 'b', 'b', '2'], and
 my code just tried printing the output. So anyways, 
 let's try implementing it in the leetcode way, but I'll try to print both the array, and the output number.
+..Also, while overwriting the 'char' arrray, if the 'char' elements are larger in size than those elements overriding it,
+we simply ignore the characters left at the end of the char array, as they won't matter.
 */
