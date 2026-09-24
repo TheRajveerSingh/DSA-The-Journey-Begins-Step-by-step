@@ -33,7 +33,7 @@ using namespace std;
 class Solution {
 public:
     int removeDuplicates(vector<int>& nums) {
-        int k = 1;
+        int k = 1; //Why k = 1? Because if this does not change, we know that there's only 1 type of unique number in the array.
 
         for (int i = 1; i < nums.size(); i++) {
             if (nums[i] != nums[i - 1]) {

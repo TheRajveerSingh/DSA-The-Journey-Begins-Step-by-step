@@ -35,22 +35,16 @@ class Solution{
     int compress (vector<char>& char1){
         int output = 0;
         int pointer1 = 0;
+        char1.push_back('n');
         for (int i = 1; i<char1.size(); i++){
             if (char1[i]!=char1[i-1]){
                 int size1 = i - pointer1;
                 if (size1 == 1){output += 1;}
-                else if (size1>=10){output += 3;}
+                else if (100>size1>=10){output += 3;}
                 else if (size1>=100){output += 4;}
                 else {output += 2;}
                 pointer1 = i;
             }
-        if (pointer1 != char1.size()-1){
-            int size2 = char1.size() - pointer1;
-            if (size2 == 1){output += 1;}
-                else if (size2>=10){output += 3;}
-                else if (size2>=100){output += 4;}
-                else {output += 2;}
-        }
         }
     return output;
     }
