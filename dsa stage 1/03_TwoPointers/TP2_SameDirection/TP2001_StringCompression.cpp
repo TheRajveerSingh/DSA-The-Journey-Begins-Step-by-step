@@ -62,3 +62,84 @@ let's try implementing it in the leetcode way, but I'll try to print both the ar
 ..Also, while overwriting the 'char' arrray, if the 'char' elements are larger in size than those elements overriding it,
 we simply ignore the characters left at the end of the char array, as they won't matter.
 */
+#include <iostream>
+#include <vector>
+using namespace std;
+class Solution{
+    public:
+    int compress(vector<char>& chars){ //A vector of type char named 'chars' is given to the function 'compress'. Since the return type of this function is 'int',, therefore the type of this function is 'int'.
+        int n = chars.size(); //storing the size of the given array
+        int read = 0, write =0; //
+
+        while (read<n){ //'read' is a pointer which reads all the elements in the given array till it reaches the end of the array
+            char curr = chars[read];  //we store the element being 'read' into curr
+            int count = 0;
+            //To count the size of the 'group of the same letter'
+            while (read<n && chars[read]==curr){ //while read still hasn't reached the end of the array, and the 'char' (character) being read is still equal to 'curr':
+                read ++; //We add 1 to read so that it can go to the other element
+                count++; //And count is added by 1. So the more each element being read is equal to 'curr', the more 'count' is increased. In the last, count will show the number of elements of that particular letter.
+            }
+            //Overwriting the character
+            chars[write] = curr; //so we overwright the chars array with that 'curr'
+            write++; //So that the next thing to be added (either count of again a letter, is overwritten onto the other index)
+            //to write the count if >1
+            if(count>1){
+                string cnt = to_string(count); //We convert the 'count' into a string because double digit numbers are added as different characters
+                for (char c: cnt){
+                    chars[write] = c;  //This line along with the line below can also be written as: chars[write++] = c;
+                    write ++;
+                }
+            }
+        }
+        return write; 
+    }
+};
+int main(){
+    Solution solver;
+    int n;
+    cout<<"Enter the size of the vector: ";
+    cin>>n;
+    cout<<"Enter the values of the array: ";
+    vector<char> chars;
+    char i;
+    for (int x = 0; x<n; x++){
+        cin>>i;
+        chars.push_back(i);
+    }
+    int len = solver.compress(chars); 
+    cout<<len<<endl;  //if we are returning in the function, we would need 'cout' to catch that return and show it. However, we can just use 'solver.function' if the function has 'cout' in the end of it.
+    
+    //To also see the overwritten array (This is not part of LeetCode. Its for me to understand the concept of this problem clearly.)
+    cout << "Compressed array: ";
+    for (int k = 0; k < len; k++) {
+        cout << chars[k] << " ";
+    }
+    cout << "\n";
+
+    cout << "Full array overwritten (with leftovers): ";
+    for (int k = 0; k < chars.size(); k++) {
+        cout << chars[k] << " ";
+    }
+    cout << "\n";
+    return 0;
+}
+/*
+Result:
+Enter the size of the vector: 7 
+Enter the values of the array: a a b b c c c
+6
+Compressed array: a 2 b 2 c 3 
+Full array overwritten (with leftovers): a 2 b 2 c 3 c 
+..
+Enter the size of the vector: 1
+Enter the values of the array: a
+1
+Compressed array: a 
+Full array overwritten (with leftovers): a 
+..
+Enter the size of the vector: 13 
+Enter the values of the array: a b b b b b b b b b b b b
+4
+Compressed array: a b 1 2 
+Full array overwritten (with leftovers): a b 1 2 b b b b b b b b b 
+*/
