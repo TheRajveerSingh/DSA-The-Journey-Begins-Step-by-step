@@ -69,7 +69,7 @@ class Solution{
     public:
     int compress(vector<char>& chars){ //A vector of type char named 'chars' is given to the function 'compress'. Since the return type of this function is 'int',, therefore the type of this function is 'int'.
         int n = chars.size(); //storing the size of the given array
-        int read = 0, write =0; //
+        int read = 0, write =0; 
 
         while (read<n){ //'read' is a pointer which reads all the elements in the given array till it reaches the end of the array
             char curr = chars[read];  //we store the element being 'read' into curr
