@@ -70,3 +70,8 @@ Enter string s: abc
 Enter string t: cba
 False
 */
+/*
+Even though the above method is correct, in that O(n+m) time complexity.
+(Please comment any one of the codes, when you're testing them.)
+So an even better approach is this:
+*/
