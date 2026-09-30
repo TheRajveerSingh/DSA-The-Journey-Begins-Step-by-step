@@ -7,13 +7,11 @@ the stratergies to go with how to solve the question.
 - Basic C++ practice
 - Topic-wise DSA practice
 - Problem solutions
-- Reusable templates
 
 ## Structure:
 - C++ Norm Progs: basic C++ programming concepts
 - DSA Stage 1: 27 topic folders arranged by concept and practice
 - Problems: common coding problems
-- Templates: reusable code snippets
 
 ## Topics covered:
 The DSA topics are organized across 27 folders under DSA Stage 1. They include:
