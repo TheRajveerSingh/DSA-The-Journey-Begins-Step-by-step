@@ -96,5 +96,19 @@ That example will also make us understand how one function can call another func
 That is why sometimes, private functions are known as 'helper functions'<br>
 
 # CHAPTER 5: SOME BASIC RULES
-
+1. For a function type 'vector' which returns a vector.<br>
+To display the elements of that vector, we again have to store that 'call' into a vector of the same type, and then traverse through it to print its elements.<br>
+For example:<br>
+vector(int) answer = solver.functionName(parameterArray);<br>
+    for(int t : answer){<br>
+        cout<< t<<" ";<br>
+    }<br>
+2. For a function type 'bool', we should return either 'true' of 'false'<br>
+but it also works if we return '1' or '0'.<br>
+Anyways, in the int main(), if we just write: cout<< solver.functionName(param), it'll return '1' or '0'. [Yeah, Bool is like that, idk why - it returns 1 or 0, even if in the function we've returned true or false.]<br>
+So, to print 'True' and 'false' actually,<br>
+we'll have to write something like:<br>
+if (solver.functionName(params)){cout<<"True";}<br>
+    else {cout<<"False";}<br>
+Remember that when function return type if bool, for true(1), we do not need to compare it ==1 in the 'if' block. This is because we aren't comparing it with an interger, but with a 'bool' which by default will return true.<br>
 ...........................................................................................
