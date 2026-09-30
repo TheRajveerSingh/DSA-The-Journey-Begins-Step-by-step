@@ -28,6 +28,9 @@ I'll start with the second value in string s,
 and to find in in string t, it'll start from that pointer to the last.
 Once the size of string s == c, we know that all pairs have been found, and we can return true.
 */
+#include <iostream>
+#include <vector>
+using namespace std;
 class Solution {
 public:
     bool isSubsequence(string s, string t) {
@@ -44,3 +47,26 @@ public:
         else {return false;}
     }
 };
+int main(){
+    Solution solver;
+    string s;
+    string t;
+    cout<<"Enter string s: ";
+    getline(cin, s);
+    cout<<"Enter string t: ";
+    getline(cin, t);
+    if(solver.isSubsequence(s, t)){cout<<"True";} //Remember that when function return type if bool, for true(1), we do not need to compare it ==1 in the 'if' block. This is because we aren't comparing it with an interger, but with a 'bool' which by default will return true.
+    else {cout<<"False";}
+}
+/*
+Results:
+Enter string s: abc         
+Enter string t: jahgdbfcv
+True
+Enter string s: abc
+Enter string t: jahcgb
+False
+Enter string s: abc
+Enter string t: cba
+False
+*/
