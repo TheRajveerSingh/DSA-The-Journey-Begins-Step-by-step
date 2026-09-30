@@ -94,4 +94,7 @@ solver.isEven(i);<br>
 1. To understand this concept better, check out the '003_UnderstandingFunctionsProgs.cpp' file.
 That example will also make us understand how one function can call another function.<br>
 That is why sometimes, private functions are known as 'helper functions'<br>
+
+# CHAPTER 5: SOME BASIC RULES
+
 ...........................................................................................
