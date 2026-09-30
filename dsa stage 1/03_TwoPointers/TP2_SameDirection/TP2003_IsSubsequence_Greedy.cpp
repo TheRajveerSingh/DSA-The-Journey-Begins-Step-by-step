@@ -75,6 +75,34 @@ Even though the above method is correct, in that O(n+m) time complexity.
 (Please comment any one of the codes, when you're testing them.)
 So an even better approach is this:
 */
+#include <iostream>
+#include <vector>
+using namespace std;
+class Solution{
+    public:
+    bool isSubsequence(string s, string t){
+    int i = 0, j = 0;
+    while ( i<(int)s.size() && j<(int)t.size() ){
+        if (s[i]==t[j]){ i++;}
+        j++;
+    }
+    if (i==(int)s.size()) //.size for both s and t are converted to "int" type, because by default they're of "size_t" type.
+    {return true;}
+    else {return false;}
+    }
+};
+int main(){
+    Solution solver;
+    string s;
+    string t;
+    cout<<"Enter string s: ";
+    getline(cin, s);
+    cout<<"Enter string t: ";
+    getline(cin, t);
+    if(solver.isSubsequence(s, t)){cout<<"True";} //Remember that when function return type if bool, for true(1), we do not need to compare it ==1 in the 'if' block. This is because we aren't comparing it with an interger, but with a 'bool' which by default will return true.
+    else {cout<<"False";}
+    return 0; //This is optional in every int main() now a days. But better write it.
+}
 /*
 Result:
 Enter string s: abc                                                   
