@@ -44,16 +44,16 @@ using namespace std;
 class Solution{
     public:
     int maxArea(vector<int>& height){
-        int max_Volume = 0;
+        int max_Volume = 0; //We store the max_Volume here
         int left = 0;
         int right = height.size() - 1;
-        while (left<right){
-            int width = right - left;
-            int heightused = min(height[left], height[right]);
-            max_Volume = max(max_Volume, width * heightused);
+        while (left<right){ //Till left is 'left' of pointer right, and right is 'right' of pointer left.
+            int width = right - left; //Calculating width
+            int heightused = min(height[left], height[right]); //minimum height of both poles is taken
+            max_Volume = max(max_Volume, width * heightused); //The maximum volume between the volume already calculated, and the current volume is taken.
 
-            if(height[right]<height[left]){ right --;}
-            else {left ++;}
+            if(height[right]<height[left]){ right --;} //If the right value is lower, we move inward from the right
+            else {left ++;} //Otherwise, if the left value is smaller, we move inward from the left
         }
         return max_Volume;
     }
