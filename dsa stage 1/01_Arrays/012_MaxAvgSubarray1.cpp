@@ -95,3 +95,10 @@ Enter the elements of the vector: 5
 Enter the value of k: 1
 5
 */
+/*
+New thing to learn:
+using nan("") and isnan() to find out whether floating-type variables
+are empty or not.
+Not exactly "empty", but its initialized to "Not a Number" till we put a number.
+So if isnan() comes true, that means there's no number put in yet in that floating-type variable.
+*/
