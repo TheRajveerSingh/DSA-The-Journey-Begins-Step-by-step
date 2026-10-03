@@ -45,7 +45,7 @@ otherwise the very last element in the array would not be considered.
 //..............................................................................................
 #include <iostream>
 #include <vector>
-#include <math.h>
+#include <cmath>
 using namespace std;
 class Solution {
 public:
