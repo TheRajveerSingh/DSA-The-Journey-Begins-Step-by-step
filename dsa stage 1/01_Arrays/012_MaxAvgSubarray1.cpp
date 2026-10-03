@@ -34,7 +34,7 @@ Also, 2 things that are important to Note:
 For this, there's a concept known as " = nan("")" - Not a number
 Basically till it gets a real number, it is considered an  undefined number.
 I am using this because,
-first I thought of initializing max_avg = 0, but zero could also be an avg of some continuous 4 numbers.
+first I thought of initializing max_avg = 0, but zero could also be an avg of the first group of continuous 4 numbers.
 The same goes for any +ve or -ve numbers. So I had to use something by which I could initialize.
 To check whether max_avg still doesn't have a number, we use .isnan().
 
@@ -50,16 +50,16 @@ using namespace std;
 class Solution {
 public:
     double findMaxAverage(vector<int>& nums, int k) {
-        int i = 0;
-        int j = k; 
-        double max_avg = nan("");
-        while (j<=nums.size()){
-            double sum = 0;
+        int i = 0; //Starting from the 0th index.
+        int j = k; //Till k, so that while traversing, it goes to 'k-1'th index.
+        double max_avg = nan(""); //max_avg doesn't have any number yet.
+        while (j<=nums.size()){  //j has to go upto nums.size() so that even the last number in the array is counted.
+            double sum = 0; //Since avg is double, even sum has to be double type.
             for (int x = i; x<j; x++){
                 sum = sum + nums[x];
             }
             double avg = sum/k;
-            if (isnan(max_avg) || avg>max_avg){ max_avg = avg;}
+            if (isnan(max_avg) || avg>max_avg){ max_avg = avg;} //If the max_avg isn't a number yet (this will be used for putting the value of the very first avg of the first group of 4 numbers.)
             i++;
             j++;
         }
