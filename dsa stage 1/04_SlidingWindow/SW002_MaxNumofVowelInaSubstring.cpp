@@ -101,3 +101,22 @@ Enter a string: aaakk
 Enter k's value: 4
 3
 */
+//..........................................................................................................
+/*
+Learning:
+Now one thing I thought of which is that,
+here, I managed to do:
+if (s[i] == 'a' || s[i] == 'e' || s[i] == 'i' || s[i] == 'o' || s[i] == 'u')
+but what if, 
+I need to something simple like in python: for s[i] in 'aeiou'
+Or what if I want to check everything except for 'aeiou'?
+Ofc I can just write:
+if (s[i] != 'a' && s[i] != 'e' && s[i] != 'i' && s[i] != 'o' && s[i] != 'u')
+..but how about something more efficient?
+I mean, not efficient, but yes, as a programmer, we should update ourselfs.
+So,
+there's one method I've found, and it uses these new statements:
+#include <string_view>
+using namespace std::literals;
+if ("aeiou"sv.find(c) != string_view::npos)
+*/
