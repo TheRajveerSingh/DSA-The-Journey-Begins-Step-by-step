@@ -36,7 +36,7 @@ If its greater than it, it replaces it.
 Now, during this process of sliding window,
 if we ever find max_num ==k, we can directly return that, right? Because then that's the max count we can find.
 If we find it, there won't be any reason to find a higher count.
-*/
+*//*
 #include <iostream>
 #include <vector>
 using namespace std;
@@ -82,7 +82,7 @@ int main(){
     cin>>k;
     cout<<solver.maxVowels(s, k);
     return 0;
-}
+}*/
 /*
 Result:
 Enter a string: abciiidef            
@@ -102,6 +102,12 @@ Enter k's value: 4
 3
 */
 //..........................................................................................................
+//..........................................................................................................
+//..........................................................................................................
+//..........................................................................................................
+//..........................................................................................................
+//..........................................................................................................
+//..........................................................................................................
 /*
 Learning:
 Now one thing I thought of which is that,
@@ -119,4 +125,62 @@ there's one method I've found, and it uses these new statements:
 #include <string_view>
 using namespace std::literals;
 if ("aeiou"sv.find(c) != string_view::npos)
+This is how to program would be:
+(Note: Comment Out any of the program above or below to make it work.)
+*/
+#include <iostream>
+#include <vector>
+#include <string_view> //1. This is added
+using namespace std;
+using namespace std::literals; //2. This is added
+class Solution{
+    public:
+    int maxVowels(string s, int k){
+        int i = 0;
+        int j = k;
+        int max_num = 0;
+        for (int x=i; x<j; x++){
+            if ("aeiou"sv.find(s[x]) != string_view::npos){  //3. How we wrote changed
+                max_num += 1;
+            }
+            if (max_num == k){return max_num;}
+        }
+        int count = max_num;
+        while (j<s.size()){
+            if ("aeiou"sv.find(s[i]) != string_view::npos){  //4. How we wrote changed
+                count--;
+            }
+            if ("aeiou"sv.find(s[j]) != string_view::npos){  //5. How we wrote changed
+                count++;
+            }
+            if (count>max_num){max_num = count;}
+            if (max_num == k){return max_num;}
+            i++;
+            j++;
+        }
+    return max_num;
+    }
+};
+int main(){
+    Solution solver;
+    string s;
+    cout<<"Enter a string: ";
+    getline(cin, s);
+    int k;
+    cout<<"Enter the value of k: ";
+    cin>>k;
+    cout<<solver.maxVowels(s, k);
+    return 0;
+}
+/*
+Result:
+Enter a string: abciiidef
+Enter the value of k: 3
+3
+Enter a string: aeious
+Enter the value of k: 2
+2
+Enter a string: aeiou
+Enter the value of k: 5
+5
 */
