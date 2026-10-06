@@ -184,3 +184,15 @@ Enter a string: aeiou
 Enter the value of k: 5
 5
 */
+/*
+Learning:
+So as we can see,
+2 things got added:
+#include <string_view>
+using namespace std::literals;
+and the long statement of:
+if (s[i] == 'a' || s[i] == 'e' || s[i] == 'i' || s[i] == 'o' || s[i] == 'u')
+got updated to:
+if ("aeiou"sv.find(s[x]) != string_view::npos).
+
+*/
