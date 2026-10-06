@@ -36,7 +36,7 @@ If its greater than it, it replaces it.
 Now, during this process of sliding window,
 if we ever find max_num ==k, we can directly return that, right? Because then that's the max count we can find.
 If we find it, there won't be any reason to find a higher count.
-*//*
+*/
 #include <iostream>
 #include <vector>
 using namespace std;
@@ -82,7 +82,7 @@ int main(){
     cin>>k;
     cout<<solver.maxVowels(s, k);
     return 0;
-}*/
+}
 /*
 Result:
 Enter a string: abciiidef            
@@ -132,7 +132,7 @@ This is how to program would be:
 #include <vector>
 #include <string_view> //1. This is added
 using namespace std;
-using namespace std::literals; //2. This is added
+using namespace std::literals; //2. This is added - to use sv
 class Solution{
     public:
     int maxVowels(string s, int k){
@@ -211,9 +211,10 @@ It is a non-owning, read-only view into a string (introduced in C++17).
 For string views, the relevant sub-namespace is std::literals::string_view_literals, 
 which defines the sv suffix.
 4. .find()
-It is used to send 'true' for those in the "text"sv.
+It is used to send the index of the match, for those in the "text"sv.
 For all other characters (digits, punctuation, uppercase letters, whitespace, control chars, 
-extended bytes, etc.)it will return npos,  to false.
+extended bytes, etc.)it will return npos, to false.
+The comparison != npos / == npos is what gives us the true/false.
 5. "text"sv also works for finding substrings.
 Example: if ("abcdef"sv.find("ef"sv) != std::string_view::npos)
 returns the index at which "ef" was found in, and that, here is 4; otherwise npos.
