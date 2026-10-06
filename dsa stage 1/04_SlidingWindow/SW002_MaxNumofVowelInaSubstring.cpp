@@ -184,6 +184,7 @@ Enter a string: aeiou
 Enter the value of k: 5
 5
 */
+//.........................
 /*
 Learning:
 So as we can see,
@@ -194,5 +195,26 @@ and the long statement of:
 if (s[i] == 'a' || s[i] == 'e' || s[i] == 'i' || s[i] == 'o' || s[i] == 'u')
 got updated to:
 if ("aeiou"sv.find(s[x]) != string_view::npos).
-
+Now, 
+let's go one by one, what these mean:
+1. string_view::npos
+'npos' here represents "no position"/"not found"
+so when we write: if ("aeiou"sv.find(s[x]) != string_view::npos)
+it means, if in "aeiou", s[x] is not equal to not found, then true..
+So, basically, if s[x] in aeiou, then true..
+What do we do if we want to find whether s[x] is every character except aeiou?
+We can just write: if ("aeiou"sv.find(s[x]) == string_view::npos)
+which would mean: if s[x] equals to 'not found', then true...
+2. <string_view>
+It is a non-owning, read-only view into a string (introduced in C++17).
+3. using namespace std::literals;
+For string views, the relevant sub-namespace is std::literals::string_view_literals, 
+which defines the sv suffix.
+4. .find()
+It is used to send 'true' for those in the "text"sv.
+For all other characters (digits, punctuation, uppercase letters, whitespace, control chars, 
+extended bytes, etc.)it will return npos,  to false.
+5. "text"sv also works for finding substrings.
+Example: if ("abcdef"sv.find("ef"sv) != std::string_view::npos)
+returns the index at which "ef" was found in, and that, here is 4; otherwise npos.
 */
