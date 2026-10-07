@@ -44,13 +44,14 @@ public:
 
             // 1. LOOKUP: Check if the number we need is ALREADY in our map
             // map.find() runs in O(1) average time!
-            if (seen.find(complement) != seen.end()) {
+            if (seen.find(complement) != seen.end()) { //If the key 'complement number' is already found in the unordered_map
                 // Found it! Return the saved index of complement and the current index
-                return {seen[complement], static_cast<int>(i)};
+                return {seen[complement], static_cast<int>(i)}; //return the value stored for that. (which is its index in the array.)
             }
 
             // 2. INSERT: Save current number and its index for future numbers to find (If not found in the hashmap)
-            seen[current_num] = static_cast<int>(i);
+            seen[current_num] = static_cast<int>(i); //If the number's complement wasn't already stored in the unordered_map, 
+            //store this current number as the key, with its array index as the value. Why? Because maybe this same number would be a complement to a number coming forward.
         }
 
         return {}; // Return empty if no pair found
@@ -147,7 +148,7 @@ Now let's see what happened here:
 look, let's take it slowly from here,
 1. seen.end() - Acts as a marker at the very end of the hashmap, after all key, value pairs.
                 The "Past-the-End" sentinel/boundary marker after all valid entries.
-2. seen.find(complement) - Acts like a traversal through the whole hashmap..
+2. seen.find(complement) - Acts like a traversal through the whole hashmap.. (Not traversal technically, since we use hash function, it directly jumps onto that container haing that {key:value}. Not important to understand for how, just think as if it looks through the whole hash map.)
                            Efficient search/traversal mechanism.
 If through the hashmap, each traversal through the hashmap for finding complement 
 doesn't reach the very last marker (seen.end()), that means it was found in between..

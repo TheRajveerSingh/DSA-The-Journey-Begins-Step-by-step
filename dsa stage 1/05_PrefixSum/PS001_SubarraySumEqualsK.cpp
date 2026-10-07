@@ -40,5 +40,11 @@ Check File: SW004_PositiveSubarraySumEqualsK.cpp"
 /*
 Okay, so after researching, I got to know that this is a Prefix Sum + HashMap Problem.
 Now, I know we're new to prefix Sum Concept, but anyhow, let's see how this goes.
+So,
+Prefix Sum Concept is nothing but a running sum of each index's value upto that index.
+For each position, we store the sum of everything from the start upto that position.
+And suppose if we want to know the sum of elements between index 3 and 8, what do we do?
+We basically take the running total sum at index 8, and minus the running total till index 2.
+So we get the sum of elements between index 3 and 8.
 */
 
