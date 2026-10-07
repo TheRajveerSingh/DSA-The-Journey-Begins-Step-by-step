@@ -84,4 +84,48 @@ Enter the values of the array: -1 1 0 -3 3
 /*
 Now, even though the above code works, that is not how we should have solved the problem..
 This is because the above solution takes O(n^2) time complexity.
+The code below solves the same problem in O(n) time.
 */
+#include <iostream>
+#include <vector>
+using namespace std;
+class Solution {
+public:
+    vector<int> productExceptSelf(vector<int>& nums) {
+    int n = nums.size();
+    vector<int> answer(n, 1);
+
+    // Left pass
+    int left = 1;
+    for (int i = 0; i < n; i++) {
+        answer[i] = left;
+        left *= nums[i];
+    }
+
+    // Right pass
+    int right = 1;
+    for (int i = n - 1; i >= 0; i--) {
+        answer[i] *= right;
+        right *= nums[i];
+    }
+
+    return answer;
+}
+};
+int main(){
+    int n, m;
+    vector<int> nums;
+    cout<<"Enter the size of the array: ";
+    cin>>n;
+    cout<<"Enter the values of the array: ";
+    for (int k=0; k<n; k++){
+        cin>>m;
+        nums.push_back(m);
+    }
+    Solution solver;
+    vector<int> answer = solver.productExceptSelf(nums);  //Remember that when we need to print the elements of a returned vector, we have to store it again in a vector and traverse it to print its elements.
+    for(int t : answer){
+        cout<<t<<" ";
+    }
+    return 0;
+}
