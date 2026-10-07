@@ -33,4 +33,12 @@ i is at 2, j is at 1 -> 2+1=3 -> Count++ -> j<nums.size() -> loop ends
 At the end we return Count.
 .........
 However, one big issue with this approach is that, it won't work with arrays with negative numbers.
+Check File: SW004_PositiveSubarraySumEqualsK.cpp"
 */
+//.......................................................................................
+//.......................................................................................
+/*
+Okay, so after researching, I got to know that this is a Prefix Sum + HashMap Problem.
+Now, I know we're new to prefix Sum Concept, but anyhow, let's see how this goes.
+*/
+
