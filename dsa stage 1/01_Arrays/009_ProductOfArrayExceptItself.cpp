@@ -23,7 +23,7 @@ that for each element in the array,
 we multiply all the elements in the right side,
 and then multiply all the elements in the left side,
 and then multiply both of those results (left * right), and place the answer in that index's place itself, right?
-*/
+*//*
 #include <iostream>
 #include <vector>
 using namespace std;
@@ -67,7 +67,7 @@ int main(){
         cout<<t<<" ";
     }
     return 0;
-}
+}*/
 /*
 Results:
 Enter the size of the array: 5
