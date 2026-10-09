@@ -46,5 +46,8 @@ For each position, we store the sum of everything from the start upto that posit
 And suppose if we want to know the sum of elements between index 3 and 8, what do we do?
 We basically take the running total sum at index 8, and minus the running total till index 2.
 So we get the sum of elements between index 3 and 8.
+..
+Now, suppose in a given array, if we want to find those subarrays whose sum = 3.
+What can we do? 
 */
 
