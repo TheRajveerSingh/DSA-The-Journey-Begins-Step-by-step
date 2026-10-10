@@ -66,3 +66,5 @@ This repository is for learning and practice.
 **Happy Learning!**
 
 *"The best time to plant a tree was 20 years ago. The second best time is now."*
+
+*"Nahin Hoga? Aise Kaise Nahin Hoga? Hoga!"*
