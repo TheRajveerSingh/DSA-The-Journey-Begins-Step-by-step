@@ -1,4 +1,4 @@
-/*Date: 7th Oct 2026
+/*Date: 7th Oct 2026 - 10th Aug 2026 (Yeah understanding this took a lot of time)
 THe given question is from LeetCode 560. Subarray Sum Equals K
 Given an array of integers nums and an integer k, return the total number 
 of subarrays whose sum equals to k.
@@ -76,18 +76,18 @@ class Solution{
         //because remember: Every 'curr' we add in a hashmap, also acts as a (curr - k) for some other curr ahead.
         
         for (int i = 0; i<nums.size(); i++){
-            curr += nums[i];
+            curr += nums[i]; //1. We calculate the running total
 
-            int hunted = curr - k;
+            int hunted = curr - k;  //2. We calculate what we want to find so that we know whether a valid subarray exists.
 
-            if (notebook.find(hunted) != notebook.end()){
-                count = count + notebook[hunted];
+            if (notebook.find(hunted) != notebook.end()){ //If (curr - k) is found in the hashmap:
+                count = count + notebook[hunted];   //3. Add the number of times we had found (curr - k) to count.
             }
 
             if(notebook.find(curr) != notebook.end()){
-                notebook[curr]++;
+                notebook[curr]++;                   //4. If the (curr) "current running sum" was already in the hashmap, updating its frequency to 1.
             }
-            else {notebook[curr] = 1;}
+            else {notebook[curr] = 1;}              //5. If the (curr) "current running sum" is new, we add it to the hashmap, with frequency 1.
         }
     return count;
 
