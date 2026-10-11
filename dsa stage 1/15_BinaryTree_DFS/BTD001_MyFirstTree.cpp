@@ -61,6 +61,7 @@ int main(){
     Solution sol; //object of Solution class
 
     //Example 1: [3, 9, 20, null, null, 15, 7]
+    //Check "Learning 4" to find an alternative way to write this same thing.
     TreeNode *root1 = new TreeNode(3);
     root1->left = new TreeNode(9);
     root1->right = new TreeNode(20);
@@ -79,4 +80,84 @@ int main(){
 Result:
 Example 1: 3                
 Example 2: 2
+..............
+Complexity:
+Time: O(n) since every node is visited exactly once.
+Space: O(h) for the recursion stack, where h is the height of the tree. Worst case O(n) for a skewed tree (like a linked list).
+*/
+/*
+Now, here's the list of things to learn and understand, one by one:
+...............................................
+Learning 1 (Basic Definations):
+nullptr -> means that, that node isn't pointing to anywhere. It just doesn't exist.
+Root -> the topmost node with no parent
+Leaf node -> the last nodes with no children
+binary tree -> a tree structure with only 2 children.
+A tree Node holds mainly 3 things: 1. A value for itself, 2. A left pointer, 3. A right pointer.
+recurrsion -> When a function calls itself inside itself.
+base case -> To stop a recursive function to run continuously forever, there has to be a case so that it stops somewhere.
+...............................................
+Learning 2 (A tree structure):
+Here,
+Every Node is being called a 'root' when its being used by the function. (root here is just the name of the parameter.)
+If the Node doesn't exist -> points to nullptr -> height 0. (base case).
+if only the node exists and no children -> Only the value of that node will exist(val), and its left and right pointers won't point to anything.
+If the node exists with children -> It'll contain its val, and the left and right pointers.
+Every pointer may point to another address, again holding the same [val, leftpointer, rightpointer].
+...............................................
+Learning 3 (pointer, address, * and &):
+A variable is something which keeps a value.
+And every variable has an address in the memory of the computer.
+(Just like a house has people, and that house has an address.)
+Now, 
+suppose if there's a variable that contains a value, which is actually an address of another variable?
+This type of variable is called a 'pointer'. Why? Because, it kinda points to the address of another variable.
+So, suppose we have 2 variables:
+p and x.
+Now, suppose x's value is 5 (int x = 5), and x's address is 1000.
+And now we want to change x's value.
+So let's make a pointer which points to x's address?
+So we do: int *p = &x;
+A '*' is used to define a pointer.,
+A '&' is used to take the address of a variable.
+So the above statement means: Let pointer p point to the address of x.
+So,
+afterwards, id we do: *p=20;
+then x's value will change to 20.
+But, but, don't be confused.
+By mistake, if we do P=20, that means something else.
+That'll mean to change the address stored in p.
+Because p=20 means changing the value p holds.
+In short,
+pointer - it is a variable which points to the address of another variable.
+Now, 
+An Address may contain many types of data. Like here, value in val, right pointer in right, left pointer in left.
+So to get the values stored in those data's in that address, we can write:
+(*root).val, or (*root).right or (*root).left.
+................................................
+Learning 4 (Writing the tree in another way):
+This same thing:
+    TreeNode *root1 = new TreeNode(3);
+    root1->left = new TreeNode(9);
+    root1->right = new TreeNode(20);
+    root1->right->left = new TreeNode(15);
+    root1->right->right = new TreeNode(7);
+Can also be written as:
+    TreeNode *root1 = new TreeNode(3,
+        new TreeNode(9),
+        new TreeNode(20, new TreeNode(15), new TreeNode(7))
+    );
+................................................
+Learning 5 (What's actually happening):
+In the statement: TreeNode* root = new TreeNode(17);
+two things are happening here:
+1. 'new TreeNode(17)' creates a real node in memory (val = 17, left = nullptr, right = nullptr). 'new' returns the address of that node.
+2. That address is stored in the pointer 'root'.
+So the pointer doesn’t build anything. It just remembers where the node is.
+How nodes link together?
+Inside every node, left and right are also pointers. So when we write:
+root->left = new TreeNode(6);
+a new node for 6 is created, and its address is stored in 17’s left pointer.
+So,
+A tree is basically nodes in memory, connected by pointers that store each other’s addresses.
 */
