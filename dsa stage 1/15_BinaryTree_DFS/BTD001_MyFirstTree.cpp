@@ -30,7 +30,8 @@ using namespace std;
 
 //Step 1. Creating the structure of a Tree.
 //What is the structure of a tree?
-//A. Either a node doesn't exist (So the value in the node is = 0, and left and right children don't exist).
+//A. Either a node doesn't exist so represented by nullptr (no TreeNode is created at all).
+//(TreeNode() is just a real node with val = 0 and no children.)
 //B. Either a node exists but doesn't have any child/Is a lead Node. (So there is a value at that node, but no children.)
 //C. A node exists with both children/Only 1 child. (So the node has a value, and both right and left point to an address/The child which doesn't exists point to nullptr.)
 //And for every Node: There exists its own value (val), and a left pointer(left child) and a right pointer(right child) which again point to another address.
@@ -89,10 +90,10 @@ Space: O(h) for the recursion stack, where h is the height of the tree. Worst ca
 Now, here's the list of things to learn and understand, one by one:
 ...............................................
 Learning 1 (Basic Definations):
-nullptr -> means that, that node isn't pointing to anywhere. It just doesn't exist.
+nullptr -> is a value a pointer can hold meaning ‘points to nothing’, so there is no node there.”
 Root -> the topmost node with no parent
 Leaf node -> the last nodes with no children
-binary tree -> a tree structure with only 2 children.
+binary tree -> a tree structure with atmost 2 children.
 A tree Node holds mainly 3 things: 1. A value for itself, 2. A left pointer, 3. A right pointer.
 recurrsion -> When a function calls itself inside itself.
 base case -> To stop a recursive function to run continuously forever, there has to be a case so that it stops somewhere.
@@ -101,7 +102,7 @@ Learning 2 (A tree structure):
 Here,
 Every Node is being called a 'root' when its being used by the function. (root here is just the name of the parameter.)
 If the Node doesn't exist -> points to nullptr -> height 0. (base case).
-if only the node exists and no children -> Only the value of that node will exist(val), and its left and right pointers won't point to anything.
+if only the node exists and no children -> Only the value of that node will exist(val), and its left and right pointers exist, but both hold nullptr.
 If the node exists with children -> It'll contain its val, and the left and right pointers.
 Every pointer may point to another address, again holding the same [val, leftpointer, rightpointer].
 ...............................................
@@ -119,21 +120,36 @@ And now we want to change x's value.
 So let's make a pointer which points to x's address?
 So we do: int *p = &x;
 A '*' is used to define a pointer.,
+In normal code, *p means ‘go to the address in p and use what’s there’.
 A '&' is used to take the address of a variable.
 So the above statement means: Let pointer p point to the address of x.
 So,
-afterwards, id we do: *p=20;
+afterwards, if we do: *p=20;
 then x's value will change to 20.
 But, but, don't be confused.
-By mistake, if we do P=20, that means something else.
+By mistake, if we do p=20, that means something else.
 That'll mean to change the address stored in p.
 Because p=20 means changing the value p holds.
+In mean, this won't also be happening. Because we can’t accidentally point p at a random address by writing a number. The compiler blocks it.
+Valid way to use p:
+p = &x;        // OK: p now holds x's address
+p = nullptr;   // OK: p now points to nothing
+*p = 20;       // OK: go to the address in p and put 20 there (x becomes 20)
+...
+However, if we really wan't to change the 'address' stored in a pointer, we normally a compiler doesn't allow,
+we can write:
+p = (int*)20;
+which tells the compiler “trust me, treat 20 as an address”.
 In short,
 pointer - it is a variable which points to the address of another variable.
 Now, 
-An Address may contain many types of data. Like here, value in val, right pointer in right, left pointer in left.
+A node (stored at an address) contains several fields: val, left, right.” The address is just the location.
+Like here, value in val, right pointer in right, left pointer in left.
 So to get the values stored in those data's in that address, we can write:
 (*root).val, or (*root).right or (*root).left.
+(*root).val gets the val field of the node that root points to. It is not “the value of root”, and it is not the whole thing at the address either.
+Also,
+(*root).val   ==   root->val
 ................................................
 Learning 4 (Writing the tree in another way):
 This same thing:
@@ -160,4 +176,11 @@ root->left = new TreeNode(6);
 a new node for 6 is created, and its address is stored in 17’s left pointer.
 So,
 A tree is basically nodes in memory, connected by pointers that store each other’s addresses.
+Also Note:
+While going through the tree down,
+Even if a field of value stored in the address to which a pointer 
+in pointing to, is already itself a pointer; 
+till the time the tree is in use, 
+every pointer is given their values when the tree is built, 
+and from then on they just hold them.
 */
