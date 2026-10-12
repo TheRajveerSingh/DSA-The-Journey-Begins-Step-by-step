@@ -1,4 +1,4 @@
-#### Statements we’ll use in tree problems:
+##### Statements we’ll use in tree problems:
 | Purpose | Statement |
 | :--- | :--- |
 | Base case (empty tree) | `if (root == nullptr) return nullptr;` (or `return 0;` if the function returns an int) |
@@ -12,3 +12,11 @@
 | Check a leaf | `root->left == nullptr && root->right == nullptr` |
 | Check "one is null" | `if (p == nullptr \|\| q == nullptr)` |
 | Return the root | `return root;` |
+
+##### For BFS (level by level), We may also use a queue:
+queue<TreeNode*> q;   // a queue of node pointers
+q.push(root);         // add
+q.front();            // look at the first
+q.pop();              // remove the first
+q.empty();            // is it empty?
+q.size();             // how many are in it?
