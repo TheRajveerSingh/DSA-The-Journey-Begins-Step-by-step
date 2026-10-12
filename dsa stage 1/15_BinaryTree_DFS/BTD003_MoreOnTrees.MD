@@ -1,4 +1,4 @@
-#### Statements we’ll use in tree problems:
+### Statements we’ll use in tree problems:
 | Purpose | Statement |
 | :--- | :--- |
 | Base case (empty tree) | `if (root == nullptr) return nullptr;` (or `return 0;` if the function returns an int) |
@@ -13,7 +13,7 @@
 | Check "one is null" | `if (p == nullptr \|\| q == nullptr)` |
 | Return the root | `return root;` |
 
-#### For BFS (level by level), We may also use a queue:
+### For BFS (level by level), We may also use a queue:
 queue<TreeNode*> q;   // a queue of node pointers<br>
 q.push(root);         // add<br>
 q.front();            // look at the first<br>
@@ -21,7 +21,7 @@ q.pop();              // remove the first<br>
 q.empty();            // is it empty?<br>
 q.size();             // how many are in it?<br>
 
-#### The Three DFS Orders
+### The Three DFS Orders
 They differ only in where we do the work on the current node.<br>
 
 void preorder(TreeNode* root) {<br>
@@ -47,7 +47,7 @@ void postorder(TreeNode* root) {<br>
 
 Example: invertTree (swap first version) is pre-order, but maxDepth is post-order.<br>
 
-#### Patern 1: Returning values/combining values
+### Patern 1: Returning values/combining values
 Suppose we have:<br>
 int l = f(root->left)<br>
 int r = f(root->right)<br>
@@ -60,7 +60,7 @@ return /* combine l, r, root */;<br>
 | Sum of all values | `root->val + l + r` |
 | Balanced check | `abs(l - r) <= 1` |
 
-#### Pattern 2: Comparing two trees at once.
+### Pattern 2: Comparing two trees at once.
 Used in Same Tree, Symmetric Tree, and Subtree of Another Tree. The function takes two pointers:<br>
 
 bool same(TreeNode* p, TreeNode* q) {<br>
@@ -72,7 +72,7 @@ bool same(TreeNode* p, TreeNode* q) {<br>
 
 The && and || chaining is very common: return a && b; means “both sides must be true.”<br>
 
-#### Pattern 3: Passing Information Down
+### Pattern 3: Passing Information Down
 Sometimes the child needs to know something from above, so we add a parameter:<br>
 
 void dfs(TreeNode* root, int depth) {<br>
@@ -84,7 +84,7 @@ void dfs(TreeNode* root, int depth) {<br>
 
 Examples: current depth, running sum (Path Sum), allowed min/max range (Validate BST: dfs(root, lo, hi)).<br>
 
-#### Pattern 4: keep a “best so far” outside the function
+### Pattern 4: keep a “best so far” outside the function
 Used when the answer is not simply what a function returns (Diameter of Binary Tree is the classic case):<br>
 
 class Solution {<br>
@@ -105,7 +105,7 @@ public:<br>
 
 An alternative is passing a reference: void dfs(TreeNode* root, int& best). This is the & in a declaration that we discussed earlier.<br>
 
-#### Pattern 5: Collect results and backtrack
+### Pattern 5: Collect results and backtrack
 For “all root-to-leaf paths” style problems:<br>
 
 vector<int> path;<br>
@@ -113,7 +113,7 @@ path.push_back(root->val);     // add<br>
 // ... recurse ...<br>
 path.pop_back();               // undo when returning<br>
 
-#### Pattern 6: Pattern: BFS, level by level
+### Pattern 6: Pattern: BFS, level by level
 The standard template. The inner loop handles exactly one level at a time:<br>
 
 queue<TreeNode*> q;<br>
@@ -131,7 +131,7 @@ while (!q.empty()) {<br>
 
 if (node->left) is shorthand for if (node->left != nullptr), because a pointer is false when it is nullptr.<br>
 
-#### Small helpers you’ll keep seeing
+### Small helpers you’ll keep seeing
 
 | Statement | Use |
 | :--- | :--- |
@@ -145,7 +145,7 @@ if (node->left) is shorthand for if (node->left != nullptr), because a pointer i
 | `unordered_map<int,int> m;` | lookups (building trees, path sums) |
 | `to_string(x)` | path strings |
 
-#### Which pattern to reach for:
+### Which pattern to reach for:
 
 | The problem says... | Think |
 | :--- | :--- |
@@ -158,7 +158,7 @@ if (node->left) is shorthand for if (node->left != nullptr), because a pointer i
 
 ___________________________________________________________________________________________________________
 
-#### Some Basic Knowledges:
+### Some Basic Knowledges:
 1. What is a TreeNode?<br>
 In arrays and strings, we used types that already exist: int, char, string, vector<int>. <br>
 A vector is a data type already designed to hold many ints.<br>
@@ -230,7 +230,7 @@ invertTree (swap first version) is preorder: it acts on the node, then recurses.
 
 Note: In a binary search tree (left values smaller, right values larger), inorder prints the values in sorted order.<br>
 
-#### Here are some new things we'd be using while working with trees:<br>
+### Here are some new things we'd be using while working with trees:<br>
 1. Recursion. 
 A function calling itself on a smaller piece. Earlier topics such as Arrays used loops with indexes. <br>
 Trees have no indexes, so recursion replaces the loop. This is the biggest mindset shift. <br>
@@ -248,7 +248,7 @@ Sometimeswe keep a variable like int best = 0; <br>
 inside the class so every recursive call can update it, instead of passing it around.<br>
 6. References (int &x) as parameters, another way to let calls share one variable.<br>
 
-#### How to Tell BFS, DFS, OR BST
+### How to Tell BFS, DFS, OR BST
 
 For BST,<br>
 The problem will literally say “binary search tree” or “BST”. <br>
