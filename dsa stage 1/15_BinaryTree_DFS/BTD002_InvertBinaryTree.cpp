@@ -22,6 +22,15 @@ Like if a left pointer is pointing to AddressA, and right to addressB, swap the 
 And now they point to the addresses opposite.
 ...Or better, just start from the leaf nodes of the tree, and keep swapping the addresses 
 of the pointer till it reaches the parent node.
+
+For example, for [2,1,3]
+Before the swap at node 2:
+2->left  = address of node 1
+2->right = address of node 3
+
+After swap(root->left, root->right):
+2->left  = address of node 3
+2->right = address of node 1
 */
 //................................................................................................................
 #include <iostream>
@@ -77,8 +86,17 @@ int main(){
     return 0;
 }
 /*
-Result:
+Result 1:
 Ex 1: 0x1f12a2f3510                     
 Ex 2: 0x1f12a2f9ca0
 ..........................Hmm, this is not the output I expected,
+*/
+//.............................................................................................
+/*
+Suppose I wanted to go from down to up, from children to parent, I could have done:
+TreeNode* l = invertTree(root->left);
+TreeNode* r = invertTree(root->right);
+root->left = r;
+root->right = l;
+return root;
 */
