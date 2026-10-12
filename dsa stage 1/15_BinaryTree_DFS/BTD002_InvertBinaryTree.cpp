@@ -90,6 +90,13 @@ Result 1:
 Ex 1: 0x1f12a2f3510                     
 Ex 2: 0x1f12a2f9ca0
 ..........................Hmm, this is not the output I expected,
+And this is coming because *inverttree function gives back a pointer.
+However,
+we can print the tree by traversing it:
+For this, we can use pre-order, post-order, or indorder DFS traversal.
+However,
+If we want is absolutely like how we expect,
+Then we have to put "Level-Order" BFS traversal. (Check file: BTD004_TypesOfTraversals.cpp)
 */
 //.............................................................................................
 /*
