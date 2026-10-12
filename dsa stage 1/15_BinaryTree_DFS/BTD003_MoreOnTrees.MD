@@ -247,3 +247,37 @@ Note the element type is TreeNode *: the container holds addresses, not copies o
 Sometimeswe keep a variable like int best = 0; <br>
 inside the class so every recursive call can update it, instead of passing it around.<br>
 6. References (int &x) as parameters, another way to let calls share one variable.<br>
+
+##### How to Tell BFS, DFS, OR BST
+
+For BST,<br>
+The problem will literally say “binary search tree” or “BST”. <br>
+If it does, the ordering rule (left smaller, right larger) is part of the problem,<br> 
+and we should use it: searching, inserting, validating, “kth smallest” (inorder gives sorted order). <br>
+If it doesn’t mention BST, the values have no order, and we can’t assume any.<br>
+
+Now, to Choose between DFS and BFS: <br>
+| Look for these words / ideas | Likely approach |
+| :--- | :--- |
+| level, row, layer, "level by level", "right side view", "zigzag", "minimum depth" (nearest leaf) | BFS |
+| path, root-to-leaf, sum along a path, subtree, height, depth, diameter, same tree, symmetric, invert, balanced | DFS |
+
+A useful test:
+Does a node’s answer depend on its subtree (everything below it)? If yes, use DFS. <br>
+Height, count, sum, invert, compare all work this way. <br>
+Does the problem care about levels (distance from the root, horizontal rows)? Use BFS. <br>
+
+Note: <br>
+Many problems can be solved both ways. <br>
+Example: maxDepth works with DFS (what we wrote) or BFS (count the levels). <br>
+When both work, DFS recursion is usually shorter to write on trees, so start there.<br>
+BFS and DFS are traversal styles. <br>
+BST is a kind of tree. <br>
+A BST problem can still be solved with DFS or BFS. <br>
+That’s why the three aren’t strict competitors. <br>
+BST tells us “you may use the ordering rule”, while DFS and BFS tell us “how to traverse”.<br>
+
+Simple,
+Does it say "binary search tree"?  -> use the ordering rule (usually DFS/inorder)
+Does it talk about levels / rows?  -> BFS with a queue
+Otherwise                          -> DFS with recursion
