@@ -35,5 +35,5 @@ So finally,
 Let's do one thing,
 For each node of the tree, what if we calculate:
 left side depth + right side depth. ?
-And then which ever is the max, we rreturn it?
+And then which ever is the max, we return it?
 */
