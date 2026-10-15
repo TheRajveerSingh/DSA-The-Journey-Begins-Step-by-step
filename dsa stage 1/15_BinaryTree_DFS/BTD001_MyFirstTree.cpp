@@ -183,4 +183,10 @@ in pointing to, is already itself a pointer;
 till the time the tree is in use, 
 every pointer is given their values when the tree is built, 
 and from then on they just hold them.
+..................................................
+Learning 6 (Distinctions):
+root->the current node's address.
+root->val → the current node's integer value.
+root->left → the address of the left child.
+root->left->val → the left child's integer value, assuming the left child exists.
 */
