@@ -98,3 +98,10 @@ Results:
 Example 1: 3            
 Example 1: 6
 */
+/*
+Simple thing to keep in mind:
+Viariables which are pointers (point to a certain address) : *variable_name
+and, Whenever a TreeNode is writen in a function: TreeNode*
+while TreeNode* root = TreeNode *root, just for remembering things easily.
+also, writing new TreeNode() allocates memory on the heap to store a new node instance.
+*/
