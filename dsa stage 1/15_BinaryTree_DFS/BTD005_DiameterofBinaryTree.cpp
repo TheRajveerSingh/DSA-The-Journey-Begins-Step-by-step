@@ -1,4 +1,4 @@
-/*Date: 13th oct 2026
+/*Date: 13th oct 2026 - 15th Oct 2026
 The following question is from LeetCode 543. Diameter of Binary Tree
 Given the root of a binary tree, return the length of the diameter of the tree.
 The diameter of a binary tree is the length of the longest path between any two nodes in a tree. 
@@ -36,4 +36,65 @@ Let's do one thing,
 For each node of the tree, what if we calculate:
 left side depth + right side depth. ?
 And then which ever is the max, we return it?
+*/
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+struct TreeNode{
+    int val;
+    TreeNode* left; //Let the * be with TreeNode itself as it appears only when TreeNode is written.
+    TreeNode* right; //because then, we can write: root, left, right - individually.
+    TreeNode(): val(0), left(nullptr), right(nullptr) {}
+    TreeNode(int x): val(x), left(nullptr), right(nullptr) {}
+    TreeNode(int x, TreeNode* left, TreeNode* right): val(x), left(left), right(right) {}
+};
+
+class Solution{
+    int best = 0;
+    public:
+    int diameterofBinaryTree(TreeNode* root){
+        depth(root);
+        return best;
+    }
+    int depth(TreeNode* root){
+        if (root == nullptr){ return 0;}
+        int left = depth(root->left);
+        int right = depth(root-> right);
+        best = max(best, left+right);
+        return 1 + max(left, right);
+    }
+};
+
+int main(){
+    Solution solver;
+
+    //Ex 1: [1,2,3,4,5] - Answer should be 3 (1-2-4 + 1-3)
+    TreeNode* root1 = new TreeNode(1);
+    root1->left = new TreeNode(2);
+    root1->right = new TreeNode(3);
+    root1->left->left = new TreeNode(4);
+    root1->left->right = new TreeNode(5);
+    cout<<"Example 1: "<<solver.diameterofBinaryTree(root1)<<endl;
+
+    //Ex 2: [1,2,3,4,5,nullptr, 7, nullptr, nullptr, 10, 11, nullptr, nullptr, nullptr, nullptr, nullptr, 17]
+    //Answer should be 6 (1-2-5-11-17 + 1-3-7)
+    TreeNode* root2 = new TreeNode(1,
+    new TreeNode(2,
+        new TreeNode(4), 
+        new TreeNode(5,
+            new TreeNode(10), 
+            new TreeNode(11, nullptr, new TreeNode(17))
+        )
+    ),
+    new TreeNode(3, nullptr, new TreeNode(7))
+    );
+    cout<<"Example 1: "<<solver.diameterofBinaryTree(root2);
+
+    return 0;
+}
+/*
+Results:
+Example 1: 3            
+Example 1: 6
 */
