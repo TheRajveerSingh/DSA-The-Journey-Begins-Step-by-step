@@ -32,5 +32,4 @@ Problems:
 It should be: root->left->val
 2. Every node in the left subtree must be smaller than the current node, and every node in the right subtree must be greater.
 3. The 2 calls return bool values, but I don't do anything with those results.
-
 */
