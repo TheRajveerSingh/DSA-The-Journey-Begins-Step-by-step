@@ -1,4 +1,4 @@
-/*Date: 15th Oct 2026
+/*
 This question is from LeetCode 98. Validate Binary Search Tree
 Given the root of a binary tree, determine if it is a valid binary search tree (BST).
 A valid BST is defined as follows:
@@ -32,4 +32,11 @@ Problems:
 It should be: root->left->val
 2. Every node in the left subtree must be smaller than the current node, and every node in the right subtree must be greater.
 3. The 2 calls return bool values, but I don't do anything with those results.
+..............................................
+First of all, 
+thing is that in a BST, its not about only checking whether the immidiate children are folloing the rule
+(left lesser than node, and right greater than node),
+but also that, After every node, its left family, should never have any number above or equal to that node.
+and its right family, should never have any number lower or equal to that node.
+So let's do one thing,
 */
