@@ -23,5 +23,4 @@ At every level, all available nodes are put in a single vector.
 Ex:  [3,9,20,,4,5,15,7]  ---> [[3],[9,20],[4,5,15,7]]
 Okay, 
 So what I'm thinking of is,
-We have to 
 */
