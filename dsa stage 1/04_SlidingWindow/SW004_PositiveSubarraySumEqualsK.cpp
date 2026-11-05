@@ -14,7 +14,7 @@ Output: 2
 //...........................................................................................
 /*
 Stratergy:
-This is how I'm thinking to solve this problem.
+This is how I'm thinking to solve this problem:
 Let's take an exaple of: 1,2,3,2,1
 Now:
 there will be two pointers: i and j, pointing towards any two elements. i being lesser than j always.
