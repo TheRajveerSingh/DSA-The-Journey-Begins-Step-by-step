@@ -181,6 +181,7 @@ Size: 0
 Enter choice: 10
 Exiting program.
 */
+//................................................
 /*
 Thing to learn:
 Difference between Push and Emplace.
@@ -198,7 +199,7 @@ public:
         age = a;
     }
 };
-.......
+.........
 Now, using push():
 Student s("Raj", 20);
 queue<Student> q;
