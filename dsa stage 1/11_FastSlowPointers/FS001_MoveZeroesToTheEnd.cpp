@@ -11,7 +11,7 @@ Example 2:
 Input: nums = [0]
 Output: [0]
 */
-//..................................
+//...................................
 /*
 Stratergy:
 We first keep a pointer on the first element. This pointer will help us writing the new element later after swapping.
